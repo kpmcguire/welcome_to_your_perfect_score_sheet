@@ -1,0 +1,96 @@
+doctype html
+html
+  head
+    link(rel="stylesheet", href="js/jquery.minicolors.css")
+    link(rel="stylesheet", href="css/main.css")
+    script(src="js/jquery.min.js")
+    script(src="js/tinycolor-min.js")
+    script(src="js/jquery.minicolors.min.js")    
+  body
+    nav.navbar.has-background-dark
+        .container
+            .navbar-brand
+                h1.navbar-item.has-text-white Auto Accessible Color Picker
+    div.km-spacer.main
+        .container.content
+            h1.title Auto Accessible Color Picker
+            p Are you sick of searching for a web accessible color that is similar to your previous non-accessible colors! Well, be sick no more! This tool will allow you to input colors, and with the simple push of a button, a robot will turn them into better versions of themselves.
+            
+            p Please note, Auto Adjust aims for an approximately 4.5:1 ratio - which is suitable for small text. 
+            p 
+                a(href="#") Auto Accessible Color Picker
+            p
+                a(href="https://developer.paciellogroup.com/blog/2012/05/whats-large-text-in-wcag-2-0-parlance/") Definition of "Large" Text from Paciello Group
+        div.km-spacer
+            .container
+                .columns
+                    .column.is-narrow
+                        .box
+                            p.is-size-4 Ratio: 
+                                strong.ratio                 
+                        .box.colorfield-container
+                            .field
+                                label.label(for="color2") Foreground Color
+                                .control
+                                    input.input.is-large.color-input.fg-color-input#color2(value="#bbeeff")
+                            .level
+                                .buttons
+                                    button.button.is-small#color2lighter 
+                                        span.icon
+                                            | ⬆️
+                                            .is-sr-only Lighten Foreground Color
+                                    button.button.is-small#color2darker
+                                        span.icon 
+                                            | ⬇️ 
+                                            .is-sr-only Darken Foreground Color                             
+                                    button.button.is-medium.is-primary#color2auto
+                                        | 🤖 Auto Adjust 
+                                        .is-sr-only Foreground Color
+                        .box.colorfield-container
+                            .field
+                                label.label(for="color1") Background Color
+                                .control
+                                    input.input.is-large.color-input.bg-color-input#color1(value="#bada55")
+                            .level
+                                .km-spacer-small.buttons
+                                    button.button.is-small#color1lighter
+                                        span.icon
+                                            | ⬆️
+                                            .is-sr-only Lighten Foreground Color
+                                    button.button.is-small#color1darker
+                                        span.icon 
+                                            | ⬇️ 
+                                            .is-sr-only Darken Foreground Color
+                                    button.button.is-medium.is-primary#color1auto.level-item
+                                        | 🤖 Auto Adjust 
+                                        .is-sr-only Foreground Color
+
+                    .column                            
+                        .box
+                            .notification.is-danger.flashmessage
+                            .title Samples
+                            .km-spacer-small
+                                .level
+                                    h2.km-spacer-small small text (18.75px or under)
+                                    strong.tag.is-large.readable-small    
+                                .example.small 
+                                    p.km-icon.km-icon-b
+                                        span.km-lorem-b lorem ipsum
+                                p.km-spacer-small 
+                            hr
+                            .km-spacer-small
+                                .level 
+                                    h2.km-spacer-small Large text (24px or over)
+                                    strong.tag.is-large.readable-large                                    
+                                .example
+                                    p.km-icon.km-icon-a
+                                        span.km-lorem-a lorem ipsum            
+    .footer
+        .container
+            p 
+                | Made By 
+                a(href="https://kpmcguire.github.io") Kevin McGuire
+
+    script(src="js/app.js")
+
+
