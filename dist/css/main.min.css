@@ -2,7 +2,7 @@ h1{color:red}@font-face{font-family:'blokletters_balpenbalpen';src:url("../fonts
 body,input{font-family:'blokletters_balpenbalpen',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
 body{background-color:#cddda9;margin:0}.development{outline:2px solid #5e732d;color:#5e732d;font-weight:bold;outline-offset:4px;display:-webkit-box;display:-ms-flexbox;display:flex;position:relative}
 .development .amount{position:absolute;left:calc(50% - 0.25em);top:-1.6em}.row{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-.house{position:relative}.house input{position:relative;top:31px;width:51px;height:51px;font-size:1em;background-color:rgba(255,255,255,0.2);border:1px solid rgba(128,128,128,0.6);text-align:center}
+.house{position:relative}.house input{position:relative;top:31px;width:51px;height:51px;font-size:1em;background-color:rgba(255,255,255,0.2);border:1px solid transparent;outline:1px solid rgba(128,128,128,0.6);text-align:center;border-radius:0;padding:.5px}
 .house input:focus{outline:2px solid magenta}.house.gloop input{outline:2px solid #90f;background-color:rgba(153,0,255,0.25)}
 .hide{display:-webkit-box;display:-ms-flexbox;display:flex}.hide .amount{display:none}
 .amount{display:none}.development .amount{display:block}.fence-wrapper{position:relative}
@@ -24,12 +24,12 @@ body{background-color:#cddda9;margin:0}.development{outline:2px solid #5e732d;co
 .scribble-input-label .scribble-control{display:inline-block;border:1px solid transparent;width:2em;height:2em}
 .scribble-input-label .scribble-input{display:block;position:absolute;opacity:0;left:-9999px;width:0;height:0}
 .scribble-input-label .scribble-input:checked+.scribble-control{background-image:url("../img/scribble.png");background-size:cover;opacity:.8}
-.wrapper{position:relative}.welcome-to-scoresheet-wrapper{width:1157px;height:1157px;position:relative;background-size:cover;margin:0 auto}
+body{zoom:66.6%}.welcome-to-scoresheet-wrapper{width:1157px;height:1157px;position:relative;background-size:cover}
 #town-name{position:absolute;left:85px;top:185px;width:110px;height:25px;background-color:transparent;border:1px solid rgba(0,0,0,0.1);font-size:.8em;padding:.25em;text-align:center}
 #town-name:focus{outline:2px solid magenta}.row-1,.row-2,.row-3,#city-plans-total,.city-plan-score-input,.park-row,.park-score,#park-total,#score-temp-row-1,#pools-container,#score-pools-container,.temp-row,#temp-score,.temp-winners,#developments,.development-row,.development-scores-container,#bis-container,#score-bis-container,#permit-refusal-container,#score-permit-refusal-container,#total-score,#reset{position:absolute}
 .row-1{top:89px;left:238px}.row-2{top:302px;left:158px}.row-3{top:519px;left:78px}
 #city-plans-total{top:1070px;left:52px;width:2em;text-align:center}#city-plan-score-1{top:792px;left:49px}
-#city-plan-score-2{top:888px;left:48px}#city-plan-score-3{top:982px;left:47px}.score-input{background-color:transparent;width:32px;height:24px;text-align:center;border:1px solid rgba(0,0,0,0.1)}
+#city-plan-score-2{top:888px;left:48px}#city-plan-score-3{top:982px;left:47px}.score-input{background-color:transparent;width:32px;height:24px;text-align:center;border:1px solid rgba(0,0,0,0.1);border-radius:0;padding:1px}
 .score-input:focus{outline:2px solid magenta}.park-score{width:2em;text-align:center}
 .park-row{display:-webkit-box;display:-ms-flexbox;display:flex}.park-wrapper+.park-wrapper{margin-left:6.6px}
 #park-row-1{top:36px;left:929px}#park-row-2{top:250px;left:888px}#park-row-3{top:464px;left:848px}
@@ -56,7 +56,7 @@ body{background-color:#cddda9;margin:0}.development{outline:2px solid #5e732d;co
 #bis-container .bis-label:nth-child(odd){margin-left:10px}#score-bis-container{width:2em;text-align:center;left:902px;top:1070px}
 #permit-refusal-container{left:1004px;top:863px}#permit-refusal-container .permit-refusal-label{margin-bottom:13px}
 #score-permit-refusal-container{left:1007px;top:1070px;width:2em;text-align:center}
-#total-score{top:1070px;left:1090px;width:2em;text-align:center}#reset{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";background:#e8dfb5;border:2px solid #cab654;padding:.2em .4em .1em;font-size:.75em;border-radius:.25em;color:#6d8535;margin:2em 0;-webkit-box-shadow:2px 2px 0 #cab654;box-shadow:2px 2px 0 #cab654;cursor:pointer;top:162px;left:47px}
+#total-score{top:1070px;left:1090px;width:2em;text-align:center}#reset{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";background:#e8dfb5;border:2px solid #cab654;padding:.2em .4em .1em;font-size:.75em;border-radius:.25em;color:#6d8535;margin:2em 0;-webkit-box-shadow:2px 2px 0 #cab654;box-shadow:2px 2px 0 #cab654;cursor:pointer;top:158px;left:45px}
 .text-center{text-align:center}.reload-double{display:inline-block;position:relative;border-color:transparent #cab654;border-radius:50%;border-style:solid;border-width:.125em;height:1em;margin:.15em;width:1em;top:.1em}
 .reload-double:before,.reload-double:after{border-style:solid;content:'';display:block;position:absolute;width:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .reload-double:after{border-color:transparent transparent transparent #cab654;border-width:.3125em 0 .3125em .5em;top:-.4em;left:.04em}

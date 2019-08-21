@@ -2,235 +2,235 @@ doctype html
 html
   head
     link(rel="stylesheet", href="css/main.min.css")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="viewport" content="width=device-width, user-scalable=no")
   body
-
-    form.welcome-to-scoresheet-wrapper(style="background-image: url('img/welcome_to.png')")
-        input#town-name(type="text" autocomplete="off")
-        - let rows = [...Array(3).keys()]
-        each r in rows
-            - r = r+1
-            div(class=`row row-${r}`)
-                .fence-wrapper.fence-active
-                    label.fence-label 
-                        input.fence-input(type="checkbox" id=`row-${r}-fence-start` checked="checked" disabled="true")
-                - let ii = [...Array(9+r).keys()]
-                each i in ii
-                    - i = i+1
-                    if (r == 1 && i == 3 || r == 1 && i == 7 || r == 1 && i == 8 || r == 2 && i == 1 || r == 2 && i == 4 || r == 2 && i == 8 || r == 3 && i == 2 || r == 3 && i == 7 || r == 3 && i == 12)
-                        .house.empty.pool(class=`house-${r}-${i}`)
-                            input(class="house-input" type="text" id=`row-${r}-house-${i}` pattern="[0-9]*")
-                    else
-                        .house.empty(class=`house-${r}-${i}`)
-                            input(class="house-input" type="text" id=`row-${r}-house-${i}` pattern="[0-9]*")
-                    if i < 9+r
-                        .fence-wrapper(class=`fence-${r}-${i}`)
-                            label.fence-label 
-                                input(class="fence-input" type="checkbox" id=`row-${r}-fence-${i}`)
-                    else 
-                        .fence-wrapper.fence-active(class=`fence-${r}-${i}`)
-                            label.fence-label
-                                input.fence-input(type="checkbox" id=`row-${r}-fence-end` checked="checked" disabled="true")
-                            
-        #developments
-
-        #city-plans-container
-            input#city-plan-score-1.city-plan-score-input.score-input(type="text" pattern="[0-9]*")
-            input#city-plan-score-2.city-plan-score-input.score-input(type="text" pattern="[0-9]*")
-            input#city-plan-score-3.city-plan-score-input.score-input(type="text" pattern="[0-9]*")
-            span#city-plans-total.total-sub
-
-        //- #pools.total-sub
-            
-        .park-row#park-row-1
-            input.park(id="park-row-1-0" type="hidden" checked="checked" value="0")
-
-            .park-wrapper
-                label.park-label.scribble-input-label(for="park-row-1-2") 
-                    input.park.scribble-input(id="park-row-1-2" type="checkbox" value="2")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-1-4")
-                    input.park.scribble-input(id="park-row-1-4" type="checkbox" value="4")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-1-10") 
-                    input.park.scribble-input(id="park-row-1-10" type="checkbox" value="10")
-                    .scribble-control
-
-                
-        .park-row#park-row-2
-            input.park(id="park-row-2-0" type="hidden" checked="checked" value="0")
-
-            .park-wrapper
-                label.park-label.scribble-input-label(for="park-row-2-2") 
-                    input.park.scribble-input(id="park-row-2-2" type="checkbox" value="2")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-2-4") 
-                    input.park.scribble-input(id="park-row-2-4" type="checkbox" value="4")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-2-6") 
-                    input.park.scribble-input(id="park-row-2-6" type="checkbox" value="6")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-2-14") 
-                    input.park.scribble-input(id="park-row-2-14" type="checkbox" value="14") 
-                    .scribble-control
-    
-                
-        .park-row#park-row-3
-            input.park(id="park-row-3-0" type="hidden" checked="checked" value="0")
-
-            .park-wrapper
-                label.park-label.scribble-input-label(for="park-row-3-2")
-                    input.park.scribble-input.scribble-input(id="park-row-3-2" type="checkbox" value="2") 
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-3-4") 
-                    input.park.scribble-input(id="park-row-3-4" type="checkbox" value="4") 
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-3-6")
-                    input.park.scribble-input(id="park-row-3-6" type="checkbox" value="6")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-3-8")
-                    input.park.scribble-input(id="park-row-3-8" type="checkbox" value="8")
-                    .scribble-control
-            .park-wrapper        
-                label.park-label.scribble-input-label(for="park-row-3-18")
-                    input.park.scribble-input(id="park-row-3-18" type="checkbox" value="18")
-                    .scribble-control
-    
-                
-        #score-park-row-1(class="park-score")
-        #score-park-row-2(class="park-score")
-        #score-park-row-3(class="park-score")
-        #park-total.total-sub
-
-        #pools-container
-            - pool_values =  [0,0,3,6,9,13,17,21,26,31,36]
-            - for(x=0;x<pool_values.length;x++)
-                - let current = x
-                - let next = x+1        
-                if (x == 0)
-                    input.pool-input(id=`pool-row-start` value=`${pool_values[current]}` type="hidden" checked="true")  
-                else if (x != pool_values.length-1)
-                    label.pool-label.scribble-input-label(for=`pool-row-${pool_values[current]}`) 
-                        input.pool-input.scribble-input(id=`pool-row-${pool_values[current]}` value=`${pool_values[next]}` type="checkbox")  
-                        .scribble-control
-                else if (x != pool_values.length)
-                    label.pool-label(for=`pool-row-${pool_values[current]}`)
-        #score-pools-container.total-sub
-
-        each r in [1]
-            .temp-row(id=`temp-row-${r}`)
-                each i in [1,2,3,4,5,6,7,8,9,10,11]
-                    label.scribble-input-label
-                        input.temp.scribble-input(id=`temp-row-${r}-${i}` type="checkbox" value="1")
-                        .scribble-control
-        .temp-winners
-            each q in [1,2,3]
-                label.scribble-input-label
-                    input.temp-winner.scribble-input(id=`temp-winner-${q}` type="checkbox" value="1")
-                    .scribble-control        
-                    
-        span#score-temp-row-1
-        input#temp-score.score-input.total-sub(type="text" name="" pattern="[0-9]*")
-
-        - for(x=1;x<7;x++)
-            if x == 1
-                div.development-row(id=`development-row-${x}`)
-                    input.development-input(type="hidden" id=`development-row-${x}-0` value=`${x}` checked="checked")
-                    - for (y=1;y<2;y++)          
-                        if y == 1
-                            label.development-label.scribble-input-label(for=`development-row-${x}-${y}`)
-                                input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${y}` value=`${x+y+1}`) 
-                                .scribble-control
-
-            else if x == 6
-                div.development-row(id=`development-row-${x}`)
-
-                    input.development-input(type="hidden" id=`development-row-${x}-0` value=`${x}` checked="checked")
-
-                    - for (z=1;z<5;z++)
-                        if z == 1
-                            label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
-                                input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+z}`)                       
-                                .scribble-control    
-                        if z == 2
-                            label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
-                                input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+2}`)
-                                .scribble-control
-                        if z == 3
-                            label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
-                                input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+4}`)
-                                .scribble-control
-                        if z == 4
-                            label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
-                                input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+6}`)
-                                .scribble-control
-
-            else 
-                div.development-row(id=`development-row-${x}`)
-                    input.development-input(type="hidden" id=`development-row-${x}-0` value=`${x}` checked="checked")
-                    - for (y=1;y<x+1;y++)
-                        if y < 5            
-                            label.development-label.scribble-input-label(for=`development-row-${x}-${y}`)
-                                if (y == 4 && x == 5)
-                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${y}` value=`${x+y+1}`)
-                                    .scribble-control
+    .wrapper
+        form.welcome-to-scoresheet-wrapper(style="background-image: url('img/welcome_to.png')")
+            input#town-name(type="text" autocomplete="off")
+            - let rows = [...Array(3).keys()]
+            each r in rows
+                - r = r+1
+                div(class=`row row-${r}`)
+                    .fence-wrapper.fence-active
+                        label.fence-label 
+                            input.fence-input(type="checkbox" id=`row-${r}-fence-start` checked="checked" disabled="true")
+                    - let ii = [...Array(9+r).keys()]
+                    each i in ii
+                        - i = i+1
+                        if (r == 1 && i == 3 || r == 1 && i == 7 || r == 1 && i == 8 || r == 2 && i == 1 || r == 2 && i == 4 || r == 2 && i == 8 || r == 3 && i == 2 || r == 3 && i == 7 || r == 3 && i == 12)
+                            .house.empty.pool(class=`house-${r}-${i}`)
+                                input(class="house-input" type="text" id=`row-${r}-house-${i}` pattern="[0-9]*")
+                        else
+                            .house.empty(class=`house-${r}-${i}`)
+                                input(class="house-input" type="text" id=`row-${r}-house-${i}` pattern="[0-9]*")
+                        if i < 9+r
+                            .fence-wrapper(class=`fence-${r}-${i}`)
+                                label.fence-label 
+                                    input(class="fence-input" type="checkbox" id=`row-${r}-fence-${i}`)
+                        else 
+                            .fence-wrapper.fence-active(class=`fence-${r}-${i}`)
+                                label.fence-label
+                                    input.fence-input(type="checkbox" id=`row-${r}-fence-end` checked="checked" disabled="true")
                                 
-                                else 
-                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${y}` value=`${x+y}`)
+            #developments
+
+            #city-plans-container
+                input#city-plan-score-1.city-plan-score-input.score-input(type="text" pattern="[0-9]*")
+                input#city-plan-score-2.city-plan-score-input.score-input(type="text" pattern="[0-9]*")
+                input#city-plan-score-3.city-plan-score-input.score-input(type="text" pattern="[0-9]*")
+                span#city-plans-total.total-sub
+
+            //- #pools.total-sub
+                
+            .park-row#park-row-1
+                input.park(id="park-row-1-0" type="hidden" checked="checked" value="0")
+
+                .park-wrapper
+                    label.park-label.scribble-input-label(for="park-row-1-2") 
+                        input.park.scribble-input(id="park-row-1-2" type="checkbox" value="2")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-1-4")
+                        input.park.scribble-input(id="park-row-1-4" type="checkbox" value="4")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-1-10") 
+                        input.park.scribble-input(id="park-row-1-10" type="checkbox" value="10")
+                        .scribble-control
+
+                    
+            .park-row#park-row-2
+                input.park(id="park-row-2-0" type="hidden" checked="checked" value="0")
+
+                .park-wrapper
+                    label.park-label.scribble-input-label(for="park-row-2-2") 
+                        input.park.scribble-input(id="park-row-2-2" type="checkbox" value="2")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-2-4") 
+                        input.park.scribble-input(id="park-row-2-4" type="checkbox" value="4")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-2-6") 
+                        input.park.scribble-input(id="park-row-2-6" type="checkbox" value="6")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-2-14") 
+                        input.park.scribble-input(id="park-row-2-14" type="checkbox" value="14") 
+                        .scribble-control
+        
+                    
+            .park-row#park-row-3
+                input.park(id="park-row-3-0" type="hidden" checked="checked" value="0")
+
+                .park-wrapper
+                    label.park-label.scribble-input-label(for="park-row-3-2")
+                        input.park.scribble-input.scribble-input(id="park-row-3-2" type="checkbox" value="2") 
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-3-4") 
+                        input.park.scribble-input(id="park-row-3-4" type="checkbox" value="4") 
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-3-6")
+                        input.park.scribble-input(id="park-row-3-6" type="checkbox" value="6")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-3-8")
+                        input.park.scribble-input(id="park-row-3-8" type="checkbox" value="8")
+                        .scribble-control
+                .park-wrapper        
+                    label.park-label.scribble-input-label(for="park-row-3-18")
+                        input.park.scribble-input(id="park-row-3-18" type="checkbox" value="18")
+                        .scribble-control
+        
+                    
+            #score-park-row-1(class="park-score")
+            #score-park-row-2(class="park-score")
+            #score-park-row-3(class="park-score")
+            #park-total.total-sub
+
+            #pools-container
+                - pool_values =  [0,0,3,6,9,13,17,21,26,31,36]
+                - for(x=0;x<pool_values.length;x++)
+                    - let current = x
+                    - let next = x+1        
+                    if (x == 0)
+                        input.pool-input(id=`pool-row-start` value=`${pool_values[current]}` type="hidden" checked="true")  
+                    else if (x != pool_values.length-1)
+                        label.pool-label.scribble-input-label(for=`pool-row-${pool_values[current]}`) 
+                            input.pool-input.scribble-input(id=`pool-row-${pool_values[current]}` value=`${pool_values[next]}` type="checkbox")  
+                            .scribble-control
+                    else if (x != pool_values.length)
+                        label.pool-label(for=`pool-row-${pool_values[current]}`)
+            #score-pools-container.total-sub
+
+            each r in [1]
+                .temp-row(id=`temp-row-${r}`)
+                    each i in [1,2,3,4,5,6,7,8,9,10,11]
+                        label.scribble-input-label
+                            input.temp.scribble-input(id=`temp-row-${r}-${i}` type="checkbox" value="1")
+                            .scribble-control
+            .temp-winners
+                each q in [1,2,3]
+                    label.scribble-input-label
+                        input.temp-winner.scribble-input(id=`temp-winner-${q}` type="checkbox" value="1")
+                        .scribble-control        
+                        
+            span#score-temp-row-1
+            input#temp-score.score-input.total-sub(type="text" name="" pattern="[0-9]*")
+
+            - for(x=1;x<7;x++)
+                if x == 1
+                    div.development-row(id=`development-row-${x}`)
+                        input.development-input(type="hidden" id=`development-row-${x}-0` value=`${x}` checked="checked")
+                        - for (y=1;y<2;y++)          
+                            if y == 1
+                                label.development-label.scribble-input-label(for=`development-row-${x}-${y}`)
+                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${y}` value=`${x+y+1}`) 
                                     .scribble-control
 
+                else if x == 6
+                    div.development-row(id=`development-row-${x}`)
+
+                        input.development-input(type="hidden" id=`development-row-${x}-0` value=`${x}` checked="checked")
+
+                        - for (z=1;z<5;z++)
+                            if z == 1
+                                label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
+                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+z}`)                       
+                                    .scribble-control    
+                            if z == 2
+                                label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
+                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+2}`)
+                                    .scribble-control
+                            if z == 3
+                                label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
+                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+4}`)
+                                    .scribble-control
+                            if z == 4
+                                label.development-label.scribble-input-label(for=`development-row-${x}-${z}`)
+                                    input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${z}` value=`${x+6}`)
+                                    .scribble-control
+
+                else 
+                    div.development-row(id=`development-row-${x}`)
+                        input.development-input(type="hidden" id=`development-row-${x}-0` value=`${x}` checked="checked")
+                        - for (y=1;y<x+1;y++)
+                            if y < 5            
+                                label.development-label.scribble-input-label(for=`development-row-${x}-${y}`)
+                                    if (y == 4 && x == 5)
+                                        input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${y}` value=`${x+y+1}`)
+                                        .scribble-control
+                                    
+                                    else 
+                                        input.development-input.scribble-input(type="checkbox" id=`development-row-${x}-${y}` value=`${x+y}`)
+                                        .scribble-control
 
 
-        .development-scores-container
-            each i in [1,2,3,4,5,6]
-                div(id=`score-development-row-${i}`).total-sub
 
-        #bis-container
-            - bis_values =  [0, 0,1,3,6,9,12,16,20,24,28]
-            - for(x=0;x<bis_values.length;x++)
-                - let current = x
-                - let next = x+1        
-                if (x == 0)
-                    input.bis-input(id=`bis-row-start` value=`${bis_values[current]}` type="hidden" checked="true")  
-                else if (x != bis_values.length-1)
-                    label.bis-label.scribble-input-label(for=`bis-row-${bis_values[current]}`) 
-                        //- | #{bis_values[current]}
-                        input.bis-input.scribble-input(id=`bis-row-${bis_values[current]}` value=`${bis_values[next]}` type="checkbox")  
-                        .scribble-control
-                else if (x != bis_values.length)
-                    label.bis-label(for=`bis-row-${bis_values[current]}`) 
-        #score-bis-container.total-sub
+            .development-scores-container
+                each i in [1,2,3,4,5,6]
+                    div(id=`score-development-row-${i}`).total-sub
 
-        #permit-refusal-container
-            - permit_refusal_values =  [0,0,0,3,5]
-            - for(x=0;x<permit_refusal_values.length;x++)
-                - let current = x
-                - let next = x+1        
-                if (x == 0)
-                    input.permit-refusal-input(id=`permit-refusal-row-start` value=`${permit_refusal_values[current]}` type="hidden" checked="true")  
-                else if (x != permit_refusal_values.length-1)
-                    label.permit-refusal-label.scribble-input-label(for=`permit-refusal-row-${current}`)
-                        input.permit-refusal-input.scribble-input(id=`permit-refusal-row-${current}` value=`${permit_refusal_values[next]}` type="checkbox")  
-                        .scribble-control
-                else if (x != permit_refusal_values.length)
-                    label.permit-refusal-label(for=`permit-refusal-row-${permit_refusal_values[current]}`) 
+            #bis-container
+                - bis_values =  [0, 0,1,3,6,9,12,16,20,24,28]
+                - for(x=0;x<bis_values.length;x++)
+                    - let current = x
+                    - let next = x+1        
+                    if (x == 0)
+                        input.bis-input(id=`bis-row-start` value=`${bis_values[current]}` type="hidden" checked="true")  
+                    else if (x != bis_values.length-1)
+                        label.bis-label.scribble-input-label(for=`bis-row-${bis_values[current]}`) 
+                            //- | #{bis_values[current]}
+                            input.bis-input.scribble-input(id=`bis-row-${bis_values[current]}` value=`${bis_values[next]}` type="checkbox")  
+                            .scribble-control
+                    else if (x != bis_values.length)
+                        label.bis-label(for=`bis-row-${bis_values[current]}`) 
+            #score-bis-container.total-sub
 
-        #score-permit-refusal-container.total-sub
+            #permit-refusal-container
+                - permit_refusal_values =  [0,0,0,3,5]
+                - for(x=0;x<permit_refusal_values.length;x++)
+                    - let current = x
+                    - let next = x+1        
+                    if (x == 0)
+                        input.permit-refusal-input(id=`permit-refusal-row-start` value=`${permit_refusal_values[current]}` type="hidden" checked="true")  
+                    else if (x != permit_refusal_values.length-1)
+                        label.permit-refusal-label.scribble-input-label(for=`permit-refusal-row-${current}`)
+                            input.permit-refusal-input.scribble-input(id=`permit-refusal-row-${current}` value=`${permit_refusal_values[next]}` type="checkbox")  
+                            .scribble-control
+                    else if (x != permit_refusal_values.length)
+                        label.permit-refusal-label(for=`permit-refusal-row-${permit_refusal_values[current]}`) 
 
-        #total-score
+            #score-permit-refusal-container.total-sub
 
-        button(type="submit" disabled style="display: none" aria-hidden="true")
+            #total-score
 
-        button#reset 
-            .reload-double            
+            button#dummy(type="submit" style="width: 0px; height: 0px; opacity: 0;")
+
+            button#reset 
+                .reload-double            
     script(src="js/app.js")
 
 

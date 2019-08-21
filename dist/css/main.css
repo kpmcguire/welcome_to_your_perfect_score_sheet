@@ -66,49 +66,52 @@ body {
   height: 51px;
   font-size: 1em;
   background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(128, 128, 128, 0.6);
+  border: 1px solid transparent;
+  outline: 1px solid rgba(128, 128, 128, 0.6);
   text-align: center;
+  border-radius: 0;
+  padding: 0.5px;
 }
 
-/* line 54, src/sass/components/_customizations.scss */
+/* line 57, src/sass/components/_customizations.scss */
 .house input:focus {
   outline: 2px solid magenta;
 }
 
-/* line 78, src/sass/components/_customizations.scss */
+/* line 81, src/sass/components/_customizations.scss */
 .house.gloop input {
   outline: 2px solid #9900ff;
   background-color: rgba(153, 0, 255, 0.25);
 }
 
-/* line 86, src/sass/components/_customizations.scss */
+/* line 89, src/sass/components/_customizations.scss */
 .hide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 89, src/sass/components/_customizations.scss */
+/* line 92, src/sass/components/_customizations.scss */
 .hide .amount {
   display: none;
 }
 
-/* line 94, src/sass/components/_customizations.scss */
+/* line 97, src/sass/components/_customizations.scss */
 .amount {
   display: none;
 }
 
-/* line 98, src/sass/components/_customizations.scss */
+/* line 101, src/sass/components/_customizations.scss */
 .development .amount {
   display: block;
 }
 
-/* line 102, src/sass/components/_customizations.scss */
+/* line 105, src/sass/components/_customizations.scss */
 .fence-wrapper {
   position: relative;
 }
 
-/* line 105, src/sass/components/_customizations.scss */
+/* line 108, src/sass/components/_customizations.scss */
 .fence-wrapper label {
   display: block;
   width: 0.5em;
@@ -119,7 +122,7 @@ body {
   left: 0;
 }
 
-/* line 120, src/sass/components/_customizations.scss */
+/* line 123, src/sass/components/_customizations.scss */
 .fence-wrapper input {
   opacity: 0;
   left: -9999px;
@@ -127,236 +130,236 @@ body {
   height: 0;
 }
 
-/* line 128, src/sass/components/_customizations.scss */
+/* line 131, src/sass/components/_customizations.scss */
 .fence-active label {
   background: linear-gradient(to right, transparent 0, transparent calc(50% - 5px), rgba(255, 255, 255, 0.8) calc(50% - 5px), rgba(255, 255, 255, 0.8) calc(50% + 5px), transparent calc(50% + 5px), transparent 100%);
 }
 
-/* line 134, src/sass/components/_customizations.scss */
+/* line 137, src/sass/components/_customizations.scss */
 .row .fence-1-2 {
   left: 0.5px;
 }
 
-/* line 137, src/sass/components/_customizations.scss */
+/* line 140, src/sass/components/_customizations.scss */
 .row .house-1-3 {
   top: 12px;
 }
 
-/* line 140, src/sass/components/_customizations.scss */
+/* line 143, src/sass/components/_customizations.scss */
 .row .fence-1-3 {
   left: 2px;
 }
 
-/* line 143, src/sass/components/_customizations.scss */
+/* line 146, src/sass/components/_customizations.scss */
 .row .fence-1-5 {
   left: 2px;
 }
 
-/* line 146, src/sass/components/_customizations.scss */
+/* line 149, src/sass/components/_customizations.scss */
 .row .house-1-6 {
   left: 2px;
 }
 
-/* line 149, src/sass/components/_customizations.scss */
+/* line 152, src/sass/components/_customizations.scss */
 .row .fence-1-6 {
   left: 1px;
 }
 
-/* line 152, src/sass/components/_customizations.scss */
+/* line 155, src/sass/components/_customizations.scss */
 .row .house-1-7 {
   top: 13px;
 }
 
-/* line 155, src/sass/components/_customizations.scss */
+/* line 158, src/sass/components/_customizations.scss */
 .row .house-1-8 {
   top: 13px;
 }
 
-/* line 158, src/sass/components/_customizations.scss */
+/* line 161, src/sass/components/_customizations.scss */
 .row .house-1-9 {
   left: -1px;
 }
 
-/* line 161, src/sass/components/_customizations.scss */
+/* line 164, src/sass/components/_customizations.scss */
 .row .fence-1-9 {
   left: -1px;
 }
 
-/* line 164, src/sass/components/_customizations.scss */
+/* line 167, src/sass/components/_customizations.scss */
 .row .house-1-10 {
   left: -3px;
 }
 
-/* line 167, src/sass/components/_customizations.scss */
+/* line 170, src/sass/components/_customizations.scss */
 .row .fence-1-10 {
   left: -4px;
 }
 
-/* line 171, src/sass/components/_customizations.scss */
+/* line 174, src/sass/components/_customizations.scss */
 .row .fence-2-1 {
   left: 2px;
 }
 
-/* line 175, src/sass/components/_customizations.scss */
+/* line 178, src/sass/components/_customizations.scss */
 .row .fence-2-4 {
   left: 2px;
 }
 
-/* line 179, src/sass/components/_customizations.scss */
+/* line 182, src/sass/components/_customizations.scss */
 .row .fence-2-6 {
   left: 1px;
 }
 
-/* line 183, src/sass/components/_customizations.scss */
+/* line 186, src/sass/components/_customizations.scss */
 .row .fence-2-9 {
   left: -2px;
 }
 
-/* line 186, src/sass/components/_customizations.scss */
+/* line 189, src/sass/components/_customizations.scss */
 .row .fence-2-10 {
   left: -2px;
 }
 
-/* line 190, src/sass/components/_customizations.scss */
+/* line 193, src/sass/components/_customizations.scss */
 .row .fence-2-11 {
   left: -3px;
 }
 
-/* line 194, src/sass/components/_customizations.scss */
+/* line 197, src/sass/components/_customizations.scss */
 .row .house-2-1 {
   top: 16px;
   left: 3px;
 }
 
-/* line 199, src/sass/components/_customizations.scss */
+/* line 202, src/sass/components/_customizations.scss */
 .row .house-2-2 {
   top: 3px;
 }
 
-/* line 202, src/sass/components/_customizations.scss */
+/* line 205, src/sass/components/_customizations.scss */
 .row .house-2-3 {
   top: 3px;
 }
 
-/* line 205, src/sass/components/_customizations.scss */
+/* line 208, src/sass/components/_customizations.scss */
 .row .house-2-4 {
   top: 15px;
   left: 0px;
 }
 
-/* line 209, src/sass/components/_customizations.scss */
+/* line 212, src/sass/components/_customizations.scss */
 .row .house-2-5 {
   top: 3px;
 }
 
-/* line 212, src/sass/components/_customizations.scss */
+/* line 215, src/sass/components/_customizations.scss */
 .row .house-2-6 {
   top: 3px;
 }
 
-/* line 215, src/sass/components/_customizations.scss */
+/* line 218, src/sass/components/_customizations.scss */
 .row .house-2-7 {
   top: 3px;
 }
 
-/* line 218, src/sass/components/_customizations.scss */
+/* line 221, src/sass/components/_customizations.scss */
 .row .house-2-8 {
   top: 15px;
 }
 
-/* line 221, src/sass/components/_customizations.scss */
+/* line 224, src/sass/components/_customizations.scss */
 .row .house-2-9 {
   top: 3px;
   left: -2px;
 }
 
-/* line 225, src/sass/components/_customizations.scss */
+/* line 228, src/sass/components/_customizations.scss */
 .row .house-2-10 {
   top: 2px;
   left: -1px;
 }
 
-/* line 230, src/sass/components/_customizations.scss */
+/* line 233, src/sass/components/_customizations.scss */
 .row .house-2-11 {
   top: 2px;
   left: -2px;
 }
 
-/* line 235, src/sass/components/_customizations.scss */
+/* line 238, src/sass/components/_customizations.scss */
 .row .fence-3-1 {
   left: 2px;
 }
 
-/* line 238, src/sass/components/_customizations.scss */
+/* line 241, src/sass/components/_customizations.scss */
 .row .fence-3-2 {
   left: 2px;
 }
 
-/* line 241, src/sass/components/_customizations.scss */
+/* line 244, src/sass/components/_customizations.scss */
 .row .fence-3-5 {
   left: 1px;
 }
 
-/* line 244, src/sass/components/_customizations.scss */
+/* line 247, src/sass/components/_customizations.scss */
 .row .fence-3-10 {
   left: -2px;
 }
 
-/* line 247, src/sass/components/_customizations.scss */
+/* line 250, src/sass/components/_customizations.scss */
 .row .fence-3-11 {
   left: -2px;
 }
 
-/* line 250, src/sass/components/_customizations.scss */
+/* line 253, src/sass/components/_customizations.scss */
 .row .fence-3-12 {
   left: -3px;
 }
 
-/* line 254, src/sass/components/_customizations.scss */
+/* line 257, src/sass/components/_customizations.scss */
 .row .house-3-1 {
   left: 0.5px;
 }
 
-/* line 258, src/sass/components/_customizations.scss */
+/* line 261, src/sass/components/_customizations.scss */
 .row .house-3-2 {
   left: 2.5px;
   top: 12px;
 }
 
-/* line 263, src/sass/components/_customizations.scss */
+/* line 266, src/sass/components/_customizations.scss */
 .row .house-3-3 {
   left: -0.5px;
 }
 
-/* line 266, src/sass/components/_customizations.scss */
+/* line 269, src/sass/components/_customizations.scss */
 .row .house-3-7 {
   top: 12px;
   left: 0.5px;
 }
 
-/* line 271, src/sass/components/_customizations.scss */
+/* line 274, src/sass/components/_customizations.scss */
 .row .house-3-10 {
   left: -2px;
 }
 
-/* line 274, src/sass/components/_customizations.scss */
+/* line 277, src/sass/components/_customizations.scss */
 .row .house-3-11 {
   left: -1.5px;
   top: 11px;
 }
 
-/* line 278, src/sass/components/_customizations.scss */
+/* line 281, src/sass/components/_customizations.scss */
 .row .house-3-12 {
   left: -3.5px;
   top: -0.5px;
 }
 
-/* line 292, src/sass/components/_customizations.scss */
+/* line 287, src/sass/components/_customizations.scss */
 .hidden {
   display: none;
 }
 
-/* line 296, src/sass/components/_customizations.scss */
+/* line 291, src/sass/components/_customizations.scss */
 .scribble-input-label {
   cursor: pointer;
   display: -webkit-box;
@@ -364,7 +367,7 @@ body {
   display: flex;
 }
 
-/* line 300, src/sass/components/_customizations.scss */
+/* line 295, src/sass/components/_customizations.scss */
 .scribble-input-label .scribble-control {
   display: inline-block;
   border: 1px solid transparent;
@@ -372,7 +375,7 @@ body {
   height: 2em;
 }
 
-/* line 308, src/sass/components/_customizations.scss */
+/* line 302, src/sass/components/_customizations.scss */
 .scribble-input-label .scribble-input {
   display: block;
   position: absolute;
@@ -382,28 +385,27 @@ body {
   height: 0;
 }
 
-/* line 316, src/sass/components/_customizations.scss */
+/* line 310, src/sass/components/_customizations.scss */
 .scribble-input-label .scribble-input:checked + .scribble-control {
   background-image: url("../img/scribble.png");
   background-size: cover;
   opacity: 0.8;
 }
 
-/* line 324, src/sass/components/_customizations.scss */
-.wrapper {
-  position: relative;
+/* line 318, src/sass/components/_customizations.scss */
+body {
+  zoom: 66.6%;
 }
 
-/* line 329, src/sass/components/_customizations.scss */
+/* line 322, src/sass/components/_customizations.scss */
 .welcome-to-scoresheet-wrapper {
   width: 1157px;
   height: 1157px;
   position: relative;
   background-size: cover;
-  margin: 0 auto;
 }
 
-/* line 338, src/sass/components/_customizations.scss */
+/* line 331, src/sass/components/_customizations.scss */
 #town-name {
   position: absolute;
   left: 85px;
@@ -417,12 +419,12 @@ body {
   text-align: center;
 }
 
-/* line 349, src/sass/components/_customizations.scss */
+/* line 342, src/sass/components/_customizations.scss */
 #town-name:focus {
   outline: 2px solid magenta;
 }
 
-/* line 354, src/sass/components/_customizations.scss */
+/* line 347, src/sass/components/_customizations.scss */
 .row-1, .row-2, .row-3,
 #city-plans-total,
 .city-plan-score-input,
@@ -447,25 +449,25 @@ body {
   position: absolute;
 }
 
-/* line 379, src/sass/components/_customizations.scss */
+/* line 372, src/sass/components/_customizations.scss */
 .row-1 {
   top: 89px;
   left: 238px;
 }
 
-/* line 384, src/sass/components/_customizations.scss */
+/* line 377, src/sass/components/_customizations.scss */
 .row-2 {
   top: 302px;
   left: 158px;
 }
 
-/* line 389, src/sass/components/_customizations.scss */
+/* line 382, src/sass/components/_customizations.scss */
 .row-3 {
   top: 519px;
   left: 78px;
 }
 
-/* line 394, src/sass/components/_customizations.scss */
+/* line 387, src/sass/components/_customizations.scss */
 #city-plans-total {
   top: 1070px;
   left: 52px;
@@ -473,93 +475,95 @@ body {
   text-align: center;
 }
 
-/* line 402, src/sass/components/_customizations.scss */
+/* line 395, src/sass/components/_customizations.scss */
 #city-plan-score-1 {
   top: 792px;
   left: 49px;
 }
 
-/* line 407, src/sass/components/_customizations.scss */
+/* line 400, src/sass/components/_customizations.scss */
 #city-plan-score-2 {
   top: 888px;
   left: 48px;
 }
 
-/* line 413, src/sass/components/_customizations.scss */
+/* line 406, src/sass/components/_customizations.scss */
 #city-plan-score-3 {
   top: 982px;
   left: 47px;
 }
 
-/* line 418, src/sass/components/_customizations.scss */
+/* line 411, src/sass/components/_customizations.scss */
 .score-input {
   background-color: transparent;
   width: 32px;
   height: 24px;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  padding: 1px;
 }
 
-/* line 425, src/sass/components/_customizations.scss */
+/* line 420, src/sass/components/_customizations.scss */
 .score-input:focus {
   outline: 2px solid magenta;
 }
 
-/* line 430, src/sass/components/_customizations.scss */
+/* line 425, src/sass/components/_customizations.scss */
 .park-score {
   width: 2em;
   text-align: center;
 }
 
-/* line 436, src/sass/components/_customizations.scss */
+/* line 431, src/sass/components/_customizations.scss */
 .park-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 440, src/sass/components/_customizations.scss */
+/* line 435, src/sass/components/_customizations.scss */
 .park-wrapper + .park-wrapper {
   margin-left: 6.6px;
 }
 
-/* line 444, src/sass/components/_customizations.scss */
+/* line 439, src/sass/components/_customizations.scss */
 #park-row-1 {
   top: 36px;
   left: 929px;
 }
 
-/* line 449, src/sass/components/_customizations.scss */
+/* line 444, src/sass/components/_customizations.scss */
 #park-row-2 {
   top: 250px;
   left: 888px;
 }
 
-/* line 454, src/sass/components/_customizations.scss */
+/* line 449, src/sass/components/_customizations.scss */
 #park-row-3 {
   top: 464px;
   left: 848px;
 }
 
-/* line 459, src/sass/components/_customizations.scss */
+/* line 454, src/sass/components/_customizations.scss */
 #score-park-row-1 {
   top: 863px;
   left: 147px;
 }
 
-/* line 464, src/sass/components/_customizations.scss */
+/* line 459, src/sass/components/_customizations.scss */
 #score-park-row-2 {
   top: 923px;
   left: 147px;
 }
 
-/* line 469, src/sass/components/_customizations.scss */
+/* line 464, src/sass/components/_customizations.scss */
 #score-park-row-3 {
   top: 982px;
   left: 147px;
 }
 
-/* line 474, src/sass/components/_customizations.scss */
+/* line 469, src/sass/components/_customizations.scss */
 #park-total {
   top: 1071px;
   left: 147px;
@@ -567,7 +571,7 @@ body {
   text-align: center;
 }
 
-/* line 481, src/sass/components/_customizations.scss */
+/* line 476, src/sass/components/_customizations.scss */
 #pools-container {
   left: 236px;
   top: 832px;
@@ -579,22 +583,22 @@ body {
       flex-wrap: wrap;
 }
 
-/* line 488, src/sass/components/_customizations.scss */
+/* line 483, src/sass/components/_customizations.scss */
 #pools-container .pool-label {
   margin-bottom: 5px;
 }
 
-/* line 491, src/sass/components/_customizations.scss */
+/* line 486, src/sass/components/_customizations.scss */
 #pools-container .pool-label:nth-child(even) {
   margin-left: 0;
 }
 
-/* line 494, src/sass/components/_customizations.scss */
+/* line 489, src/sass/components/_customizations.scss */
 #pools-container .pool-label:nth-child(odd) {
   margin-left: 5px;
 }
 
-/* line 501, src/sass/components/_customizations.scss */
+/* line 496, src/sass/components/_customizations.scss */
 #score-pools-container {
   left: 255px;
   top: 1070px;
@@ -602,7 +606,7 @@ body {
   text-align: center;
 }
 
-/* line 509, src/sass/components/_customizations.scss */
+/* line 504, src/sass/components/_customizations.scss */
 .temp-row {
   top: 818px;
   left: 364px;
@@ -614,30 +618,30 @@ body {
   width: 100px;
 }
 
-/* line 516, src/sass/components/_customizations.scss */
+/* line 511, src/sass/components/_customizations.scss */
 .temp-row .scribble-control {
   width: 1.5em;
   height: 1.45em;
   border: 0;
 }
 
-/* line 523, src/sass/components/_customizations.scss */
+/* line 518, src/sass/components/_customizations.scss */
 .temp-row label:nth-child(1) {
   margin-left: 0;
 }
 
-/* line 527, src/sass/components/_customizations.scss */
+/* line 522, src/sass/components/_customizations.scss */
 .temp-row label:nth-child(2), .temp-row label:nth-child(5), .temp-row label:nth-child(8), .temp-row label:nth-child(11) {
   margin-left: 27px;
 }
 
-/* line 531, src/sass/components/_customizations.scss */
+/* line 526, src/sass/components/_customizations.scss */
 .temp-row label:nth-child(3), .temp-row label:nth-child(6), .temp-row label:nth-child(9) {
   margin-left: 27px;
   margin-right: 50px;
 }
 
-/* line 537, src/sass/components/_customizations.scss */
+/* line 532, src/sass/components/_customizations.scss */
 #score-temp-row-1 {
   top: 788px;
   left: 385px;
@@ -645,13 +649,13 @@ body {
   text-align: center;
 }
 
-/* line 545, src/sass/components/_customizations.scss */
+/* line 540, src/sass/components/_customizations.scss */
 #temp-score {
   top: 1070px;
   left: 380px;
 }
 
-/* line 550, src/sass/components/_customizations.scss */
+/* line 545, src/sass/components/_customizations.scss */
 .temp-winners {
   top: 993px;
   left: 352px;
@@ -660,7 +664,7 @@ body {
   display: flex;
 }
 
-/* line 556, src/sass/components/_customizations.scss */
+/* line 551, src/sass/components/_customizations.scss */
 #developments {
   left: 528px;
   top: 1005px;
@@ -674,43 +678,43 @@ body {
   font-size: 0.8em;
 }
 
-/* line 569, src/sass/components/_customizations.scss */
+/* line 564, src/sass/components/_customizations.scss */
 #development-row-1 {
   left: 510px;
   top: 885px;
 }
 
-/* line 574, src/sass/components/_customizations.scss */
+/* line 569, src/sass/components/_customizations.scss */
 #development-row-2 {
   left: 566px;
   top: 868px;
 }
 
-/* line 579, src/sass/components/_customizations.scss */
+/* line 574, src/sass/components/_customizations.scss */
 #development-row-3 {
   left: 618px;
   top: 847px;
 }
 
-/* line 584, src/sass/components/_customizations.scss */
+/* line 579, src/sass/components/_customizations.scss */
 #development-row-4 {
   left: 671px;
   top: 827px;
 }
 
-/* line 589, src/sass/components/_customizations.scss */
+/* line 584, src/sass/components/_customizations.scss */
 #development-row-5 {
   left: 727px;
   top: 810px;
 }
 
-/* line 594, src/sass/components/_customizations.scss */
+/* line 589, src/sass/components/_customizations.scss */
 #development-row-6 {
   left: 779px;
   top: 791px;
 }
 
-/* line 599, src/sass/components/_customizations.scss */
+/* line 594, src/sass/components/_customizations.scss */
 .development-scores-container {
   top: 1072px;
   left: 505px;
@@ -723,37 +727,37 @@ body {
           justify-content: space-between;
 }
 
-/* line 607, src/sass/components/_customizations.scss */
+/* line 602, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-2 {
   position: relative;
   left: -2px;
 }
 
-/* line 612, src/sass/components/_customizations.scss */
+/* line 607, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-3 {
   position: relative;
   left: -3px;
 }
 
-/* line 617, src/sass/components/_customizations.scss */
+/* line 612, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-4 {
   position: relative;
   left: -5px;
 }
 
-/* line 622, src/sass/components/_customizations.scss */
+/* line 617, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-5 {
   position: relative;
   left: -3px;
 }
 
-/* line 627, src/sass/components/_customizations.scss */
+/* line 622, src/sass/components/_customizations.scss */
 .development-scores-container .total-sub {
   width: 2em;
   text-align: center;
 }
 
-/* line 634, src/sass/components/_customizations.scss */
+/* line 629, src/sass/components/_customizations.scss */
 #bis-container {
   left: 878px;
   top: 795px;
@@ -765,22 +769,22 @@ body {
       flex-wrap: wrap;
 }
 
-/* line 641, src/sass/components/_customizations.scss */
+/* line 636, src/sass/components/_customizations.scss */
 #bis-container .bis-label {
   margin-bottom: 15px;
 }
 
-/* line 644, src/sass/components/_customizations.scss */
+/* line 639, src/sass/components/_customizations.scss */
 #bis-container .bis-label:nth-child(even) {
   margin-left: 0;
 }
 
-/* line 647, src/sass/components/_customizations.scss */
+/* line 642, src/sass/components/_customizations.scss */
 #bis-container .bis-label:nth-child(odd) {
   margin-left: 10px;
 }
 
-/* line 653, src/sass/components/_customizations.scss */
+/* line 648, src/sass/components/_customizations.scss */
 #score-bis-container {
   width: 2em;
   text-align: center;
@@ -788,18 +792,18 @@ body {
   top: 1070px;
 }
 
-/* line 661, src/sass/components/_customizations.scss */
+/* line 656, src/sass/components/_customizations.scss */
 #permit-refusal-container {
   left: 1004px;
   top: 863px;
 }
 
-/* line 665, src/sass/components/_customizations.scss */
+/* line 660, src/sass/components/_customizations.scss */
 #permit-refusal-container .permit-refusal-label {
   margin-bottom: 13px;
 }
 
-/* line 670, src/sass/components/_customizations.scss */
+/* line 665, src/sass/components/_customizations.scss */
 #score-permit-refusal-container {
   left: 1007px;
   top: 1070px;
@@ -807,7 +811,7 @@ body {
   text-align: center;
 }
 
-/* line 678, src/sass/components/_customizations.scss */
+/* line 673, src/sass/components/_customizations.scss */
 #total-score {
   top: 1070px;
   left: 1090px;
@@ -815,7 +819,7 @@ body {
   text-align: center;
 }
 
-/* line 686, src/sass/components/_customizations.scss */
+/* line 681, src/sass/components/_customizations.scss */
 #reset {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: #e8dfb5;
@@ -828,16 +832,16 @@ body {
   -webkit-box-shadow: 2px 2px 0 #cab654;
           box-shadow: 2px 2px 0 #cab654;
   cursor: pointer;
-  top: 162px;
-  left: 47px;
+  top: 158px;
+  left: 45px;
 }
 
-/* line 702, src/sass/components/_customizations.scss */
+/* line 697, src/sass/components/_customizations.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 736, src/sass/components/_customizations.scss */
+/* line 731, src/sass/components/_customizations.scss */
 .reload-double {
   display: inline-block;
   position: relative;
@@ -851,7 +855,7 @@ body {
   top: 0.1em;
 }
 
-/* line 747, src/sass/components/_customizations.scss */
+/* line 742, src/sass/components/_customizations.scss */
 .reload-double:before, .reload-double:after {
   border-style: solid;
   content: '';
@@ -862,7 +866,7 @@ body {
   transform: rotate(-45deg);
 }
 
-/* line 756, src/sass/components/_customizations.scss */
+/* line 751, src/sass/components/_customizations.scss */
 .reload-double:after {
   border-color: transparent transparent transparent #cab654;
   border-width: .3125em 0 .3125em .5em;
@@ -870,7 +874,7 @@ body {
   left: .04em;
 }
 
-/* line 762, src/sass/components/_customizations.scss */
+/* line 757, src/sass/components/_customizations.scss */
 .reload-double:before {
   border-color: transparent #cab654 transparent transparent;
   border-width: .3125em .5em .3125em 0;

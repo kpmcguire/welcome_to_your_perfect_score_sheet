@@ -445,6 +445,12 @@ document.getElementById('reset').addEventListener('click', (function (event) {
   }  
 }))
 
+document.getElementById('dummy').addEventListener('click', (function (event) {
+  event.preventDefault()
+  event.stopPropagation()
+
+}))
+
 
 
 

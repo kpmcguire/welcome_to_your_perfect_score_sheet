@@ -48,8 +48,11 @@ body {
         height: 51px;
         font-size: 1em;
         background-color: rgba(white, 0.2);
-        border: 1px solid rgba(gray, 0.6);
+        border: 1px solid transparent;
+        outline: 1px solid rgba(gray, 0.6);
         text-align: center;
+        border-radius: 0;
+        padding: 0.5px;
 
         &:focus {
             outline: 2px solid magenta;
@@ -279,14 +282,6 @@ body {
         left: -3.5px;
         top: -0.5px;
     }
-
-
-
-
-
-
-
-
 }
 
 .hidden {
@@ -299,7 +294,6 @@ body {
 
     .scribble-control {
         display: inline-block;
-        // border: 1px solid rgba(black, 0.2);
         border: 1px solid transparent;
         width: 2em;
         height: 2em;
@@ -321,9 +315,8 @@ body {
     }
 }
 
-.wrapper {
-    position: relative;
-
+body {
+    zoom: 66.6%;
 }
 
 .welcome-to-scoresheet-wrapper {
@@ -332,7 +325,7 @@ body {
     height: 1157px;
     position: relative;
     background-size: cover;
-    margin: 0 auto;
+    // margin: 0 auto;
 }
 
 #town-name {
@@ -421,10 +414,12 @@ body {
     height: 24px;
     text-align: center;
     border: 1px solid rgba(black, 0.1);
-    // border: none;
-&:focus {
-    outline: 2px solid magenta;
-}    
+    border-radius: 0;
+    padding: 1px;
+
+    &:focus {
+        outline: 2px solid magenta;
+    }    
 }
 
 .park-score {
@@ -694,8 +689,8 @@ body {
      margin: 2em 0;
      box-shadow: 2px 2px 0 darken($paper, 20);
      cursor: pointer;
-     top: 162px;
-     left: 47px;
+     top: 158px;
+     left: 45px;
      
 }
 
