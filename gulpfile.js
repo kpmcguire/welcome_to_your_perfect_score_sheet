@@ -8,6 +8,7 @@ var settings = {
 	scripts: true,
 	polyfills: true,
 	styles: true,
+	images: false,
 	svgs: true,
 	copy: true,
   reload: true,
@@ -41,31 +42,16 @@ var paths = {
   pug: {
     input: 'src/pug/**/*',
     output: 'dist/'
-  },  
+	},  
+	fonts: {
+		input: 'src/fonts/*',
+		output: 'dist/fonts/'
+	},
+	images: {
+		input: 'src/img/*',
+		output: 'dist/img/'
+	},	
 	reload: './dist/'
-};
-
-
-/**
- * Template for banner to add to file headers
- */
-
-var banner = {
-	full:
-		'/*!\n' +
-		' * <%= package.name %> v<%= package.version %>\n' +
-		' * <%= package.description %>\n' +
-		' * (c) ' + new Date().getFullYear() + ' <%= package.author.name %>\n' +
-		' * <%= package.license %> License\n' +
-		' * <%= package.repository.url %>\n' +
-		' */\n\n',
-	min:
-		'/*!' +
-		' <%= package.name %> v<%= package.version %>' +
-		' | (c) ' + new Date().getFullYear() + ' <%= package.author.name %>' +
-		' | <%= package.license %> License' +
-		' | <%= package.repository.url %>' +
-		' */\n'
 };
 
 
@@ -79,8 +65,7 @@ var del = require('del');
 var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
-var header = require('gulp-header');
-var package = require('./package.json');
+var uglifycss = require('gulp-uglifycss');
 var pug = require('gulp-pug');
 
 // Scripts
@@ -99,6 +84,17 @@ var svgmin = require('gulp-svgmin');
 
 // BrowserSync
 var browserSync = require('browser-sync');
+
+var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
+
+function swallowError(error) {
+
+	// If you want details of the error in the console
+	console.log(error.toString())
+
+	this.emit('end')
+}
 
 
 /**
@@ -123,13 +119,11 @@ var cleanDist = function (done) {
 
 // Repeated JavaScript tasks
 var jsTasks = lazypipe()
-	.pipe(header, banner.full, {package: package})
 	.pipe(optimizejs)
 	.pipe(dest, paths.scripts.output)
 	.pipe(rename, {suffix: '.min'})
 	.pipe(uglify)
 	.pipe(optimizejs)
-	.pipe(header, banner.min, {package: package})
 	.pipe(dest, paths.scripts.output);
 
 // Lint, minify, and concatenate scripts
@@ -174,7 +168,9 @@ var buildScripts = function (done) {
 			// Otherwise, process the file
 			return stream.pipe(jsTasks());
 
-		}));
+		})
+		.on('error', swallowError)
+		);
 
 	// Signal completion
 	done();
@@ -209,20 +205,15 @@ var buildStyles = function (done) {
 			outputStyle: 'expanded',
 			sourceComments: true
 		}))
+		.on('error', swallowError)
 		.pipe(prefix({
 			browsers: ['last 2 version', '> 0.25%'],
 			cascade: true,
 			remove: true
 		}))
-		.pipe(header(banner.full, { package : package }))
 		.pipe(dest(paths.styles.output))
+		.pipe(uglifycss({"maxLineLen": 80, "uglyComments": true}))
 		.pipe(rename({suffix: '.min'}))
-		// .pipe(minify({
-		// 	discardComments: {
-		// 		removeAll: true
-		// 	}
-		// }))
-		.pipe(header(banner.min, { package : package }))
 		.pipe(dest(paths.styles.output));
 
 	// Signal completion
@@ -238,12 +229,23 @@ var buildPug = function (done) {
 
   // Run tasks on all Sass files
   src(paths.pug.input)
-    .pipe(pug())
+		.pipe(pug())
+		.on('error', swallowError)
     .pipe(dest(paths.pug.output));
 
   // Signal completion
   done();
 
+};
+
+var minimizeImages = function(done) {
+	if (!settings.images) return done();
+	src(paths.images.input)
+		.pipe(cache(imagemin({
+				interlaced: true
+		})))
+		.pipe(dest(paths.images.output));
+		done();
 };
 
 // Optimize SVG files
@@ -309,21 +311,8 @@ var watchSource = function (done) {
 };
 
 var copyRequiredFiles = function(done) {
-  src([
-    'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/tinycolor2/dist/tinycolor-min.js', 
-    'node_modules/@claviska/jquery-minicolors/jquery.minicolors.min.js',
-    'node_modules/@claviska/jquery-minicolors/jquery.minicolors.css',
-    'node_modules/@claviska/jquery-minicolors/jquery.minicolors.png'
-    ])
-    .pipe(dest(paths.scripts.output));
-
-    src([
-      'node_modules/bulma/css/bulma.min.css'
-    ])
-    .pipe(dest(paths.styles.output));    
-
-  // Signal completion
+  src(paths.fonts.input).pipe(dest(paths.fonts.output));
+	src(paths.images.input).pipe(dest(paths.images.output));
   done();
 };
 
@@ -336,14 +325,13 @@ var copyRequiredFiles = function(done) {
 // gulp
 exports.default = series(
   cleanDist,
-  copyRequiredFiles,
+	copyRequiredFiles,
 	parallel(
 		buildScripts,
 		lintScripts,
 		buildStyles,
     buildSVGs,
-    buildPug,
-		copyFiles
+		buildPug
 	)
 );
 
