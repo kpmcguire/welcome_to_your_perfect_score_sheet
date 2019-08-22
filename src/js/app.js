@@ -122,6 +122,18 @@ document.getElementById('town-name').addEventListener('change', function(event){
 
 window.addEventListener('DOMContentLoaded', (event) => {
   restore_all()
+
+  let ua = navigator.userAgent.toLowerCase()
+  console.log(ua)
+
+  if (ua.includes('ipad') || ua.includes('iphone')) {
+    document.querySelector('.body').classList.add('mobile')
+  }
+
+  if (ua.includes('safari')) {
+    document.querySelector('.body').classList.add('safari')
+  }  
+
 })
 
 function update_developments(fence_selector, house_selector, development_selector, amount_selector) {
@@ -393,6 +405,8 @@ function save_all() {
 function restore_all() {
   let checks = JSON.parse(localStorage.getItem('all_checkboxes'))
 
+  if (checks != null) {
+
   for (let [key, value] of Object.entries(checks)) {
 
     let elm = document.getElementById(`${key}`)
@@ -404,9 +418,11 @@ function restore_all() {
       elm.checked = value
     }
   }
+  }
 
   let texts = JSON.parse(localStorage.getItem('all_texts'))
 
+  if (texts != null) {
   for (let [key, value] of Object.entries(texts)) {
 
     let elm = document.getElementById(`${key}`)
@@ -415,7 +431,7 @@ function restore_all() {
     elm.dispatchEvent(new Event('change', { bubbles: true }))
 
   }
-
+  }
   ok_to_save = true
 }
 
@@ -448,9 +464,27 @@ document.getElementById('reset').addEventListener('click', function (event) {
 document.getElementById('dummy').addEventListener('click', function (event) {
   event.preventDefault()
   event.stopPropagation()
-
 })
 
 
+document.addEventListener('click', function (event) {
 
+if (
+  event.target.classList.contains('welcome-to-scoresheet-wrapper') ||
+  event.target.classList.contains('wrapper') ||
+  event.target.classList.contains('body')
+) {
+  document.activeElement.blur()
+}
+})
+
+document.addEventListener('touchstart', function (event) {
+  if (
+    event.target.classList.contains('welcome-to-scoresheet-wrapper') ||
+    event.target.classList.contains('wrapper') ||
+    event.target.classList.contains('body')
+  ) {
+    document.activeElement.blur()
+  }
+})
 

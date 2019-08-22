@@ -41,6 +41,7 @@ body {
 
 .house {
     position: relative;
+
     input {
         position: relative;
         top: 31px;
@@ -52,7 +53,15 @@ body {
         outline: 1px solid rgba(gray, 0.6);
         text-align: center;
         border-radius: 0;
-        padding: 0.5px;
+        padding: 1px;
+
+        @at-root .mobile.safari .house input {
+            padding: 0.5px;
+        }
+
+        @at-root .safari .house input {
+            padding: 0.75px;
+        }        
 
         &:focus {
             outline: 2px solid magenta;
@@ -436,6 +445,10 @@ body {
     margin-left: 6.6px;
 }
 
+.mobile.safari .park-wrapper + .park-wrapper {
+    margin-left: 6px;
+}
+
 #park-row-1 {
     top: 36px;
     left: 929px;
@@ -449,6 +462,10 @@ body {
 #park-row-3 {
     top: 464px;
     left: 848px;
+}
+
+.mobile.safari #park-row-3 {
+    left: 846px;
 }
 
 #score-park-row-1 {
@@ -561,6 +578,14 @@ body {
     }
 }
 
+.mobile-safari #developments {
+    top: 1002px;
+}
+
+.mobile.safari .development-row .development-label + .development-label {
+    margin-top: -1.5px;
+}
+
 #development-row-1 {
     left: 510px;
     top: 885px;
@@ -633,8 +658,16 @@ body {
     display: flex;
     flex-wrap: wrap;
 
+    @at-root .mobile.safari #bis-container {
+        left: 876px;
+    }           
+
     .bis-label {
         margin-bottom: 15px; 
+
+        @at-root .mobile.safari #bis-container .bis-label {
+            margin-bottom: 13.5px;
+        }        
 
         &:nth-child(even) {
             margin-left: 0;
@@ -662,6 +695,11 @@ body {
     }
 }
 
+.mobile-safari #permit-refusal-container {
+    left: 1000px;
+    top: 856px;
+}
+
 #score-permit-refusal-container {
     left: 1007px;
     top: 1070px;
@@ -674,7 +712,6 @@ body {
     top: 1070px;
     left: 1090px;
     width: 2em;
-    // outline: 1px solid magenta;
     text-align: center;
 }
 
@@ -699,34 +736,6 @@ body {
 }
 
 
-
-// * {
-//   margin: 0;
-//   padding: 0;
-// }
-// *, *:before, *:after {
-//   -webkit-box-sizing: border-box;
-// 	-moz-box-sizing: border-box;
-// 	box-sizing: border-box;
-// }
-	  
-// body {
-//   background-color: #47d1da;
-//   color: white;
-//   font: bold 400% Helvetica,Arial;
-// 	text-align: center;
-// }
-// div {
-//   display: inline-block;
-//   position: relative;
-//   -webkit-animation: rotate 1.5s linear infinite;
-//   animation: rotate 1.5s linear infinite;
-// }
-// small {
-//   display: block;
-//   line-height: 2.25em;
-// }
-    
 // Double
 .reload-double {
   display: inline-block;
