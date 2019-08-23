@@ -132,13 +132,17 @@ html
                             input.temp.scribble-input(id=`temp-row-${r}-${i}` type="checkbox" value="1")
                             .scribble-control
             .temp-winners
-                each q in [1,2,3]
-                    label.scribble-input-label
-                        input.temp-winner.scribble-input(id=`temp-winner-${q}` type="checkbox" value="1")
-                        .scribble-control        
+                each q in [0,7,4,1]
+                    if (q == 0)
+                        input.temp-winner.scribble-input(id=`temp-winner-${q}` type="hidden" value=`${q}` checked="checked")
+
+                    else
+                        label.scribble-input-label
+                            input.temp-winner.scribble-input(id=`temp-winner-${q}` type="checkbox" value=`${q}`)
+                            .scribble-control        
                         
             span#score-temp-row-1
-            input#temp-score.score-input.total-sub(type="text" name="" pattern="[0-9]*")
+            #temp-score.total-sub
 
             - for(x=1;x<7;x++)
                 if x == 1

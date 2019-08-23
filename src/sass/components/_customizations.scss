@@ -139,7 +139,7 @@ body {
 
 .fence-active label {
     $amt: 5px;
-    background: linear-gradient(to right, transparent 0, transparent calc(50% - #{$amt}), rgba(white, 0.8) calc(50% - #{$amt}), rgba(white, 0.8) calc(50% + #{$amt}), transparent calc(50% + #{$amt}), transparent 100%);
+    background: linear-gradient(to right, transparent 0, transparent calc(50% - #{$amt}), rgba(black, 0.6) calc(50% - #{$amt}), rgba(black, 0.6) calc(50% + #{$amt}), transparent calc(50% + #{$amt}), transparent 100%);
 }
 
 .row {
@@ -556,7 +556,9 @@ body {
 
 #temp-score {
     top: 1070px;
-    left: 380px;    
+    left: 382px;
+    width: 2em;    
+    text-align: center;
 }
 
 .temp-winners {
@@ -566,20 +568,17 @@ body {
 }
 
 #developments {
-    left: 528px;
-    top: 1005px;
-    width: 295px;
+    left: 523px;
+    top: 1002px;
+    width: 308px;
     display: flex;
     justify-content: space-between;
     font-size: 0.8em;
 
     div {
-        // outline: 1px solid magenta;
+        width: 2em;
+        text-align: center;
     }
-}
-
-.mobile-safari #developments {
-    top: 1002px;
 }
 
 .mobile.safari .development-row .development-label + .development-label {

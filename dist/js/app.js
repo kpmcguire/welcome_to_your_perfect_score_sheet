@@ -4,13 +4,27 @@ let development_selector = 'development'
 let amount_selector = 'amount'
 let ok_to_save = false
 
+function debounce(func, wait, immediate) {
+  var timeout
+  return function () {
+    var context = this, args = arguments
+    var later = function () {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+    var callNow = immediate && !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) func.apply(context, args)
+  }
+}
+
 document.querySelectorAll('.park-row').forEach((function (element) {
   element.addEventListener('change', (function (event) {
     if (event.target.matches('.park')) {
       update_parks()
       update_total()
       save_all()
-
     }
   }))
 }))
@@ -46,7 +60,8 @@ document.querySelectorAll('.development-row').forEach((function (element) {
 }))
 
 document.querySelectorAll('.row').forEach((function (element) {
-  element.addEventListener('change', (function (event) {
+
+  element.addEventListener('click', (function(event){
     if (event.target.matches('.fence-input')) {
       let el = event.target
 
@@ -56,31 +71,51 @@ document.querySelectorAll('.row').forEach((function (element) {
         el.parentNode.parentNode.classList.add('fence-active')
       }
       update_developments(fence_selector, house_selector, development_selector, amount_selector)
+      update_total()
+      save_all()
     }
+
+  }))
+
+  function restore_fn(event) {
     if (event.target.matches('.house input')) {
       let el = event.target
 
-      if (el.value && el.parentNode.classList.contains('empty')) {
+      if (el.value) {
         el.parentNode.classList.remove('empty')
       } else {
         el.parentNode.classList.add('empty')
         el.parentNode.classList.remove('gloop')
       }
       update_developments(fence_selector, house_selector, development_selector, amount_selector)
-    }
-    update_total()
-    save_all()
-  }))
-}))
-
-document.querySelectorAll('#city-plans-container').forEach((function (element) {
-  element.addEventListener('change', (function (event) {
-    if (event.target.matches('.city-plan-score-input')) {
-      update_city_plans()
       update_total()
       save_all()
-    }
+    }    
+  }
+
+  let debounced_change_house_value = debounce((function(event){
+    restore_fn(event)
+  }), 250)
+
+  element.addEventListener('keyup', debounced_change_house_value)
+
+  element.addEventListener('restore', (function(event){
+    restore_fn(event)
   }))
+
+}))
+
+
+let debounced_city_plan_update = debounce((function(event){
+  if (event.target.matches('.city-plan-score-input')) {
+    update_city_plans()
+    update_total()
+    save_all()
+  }
+}), 250)
+
+document.querySelectorAll('#city-plans-container').forEach((function (element) {
+  element.addEventListener('keyup', debounced_city_plan_update)
 }))
 
 document.getElementById('temp-score').addEventListener('change', (function(event) {
@@ -109,22 +144,25 @@ document.querySelectorAll('#permit-refusal-container').forEach((function (elemen
 }))
 
 document.querySelectorAll('.temp-winners').forEach((function (element) {
-  element.addEventListener('change', (function (event) {
+  element.addEventListener('click', (function (event) {
     if (event.target.matches('.temp-winner')) {
+      update_temp_winner(event)
+      update_total()
       save_all()
     }
   }))
 }))
 
-document.getElementById('town-name').addEventListener('change', (function(event){
+let debounced_update_town_name = debounce((function(event){
   save_all()
-}))
+}), 250)
+
+document.getElementById('town-name').addEventListener('keyup', debounced_update_town_name)
 
 window.addEventListener('DOMContentLoaded', (event) => {
   restore_all()
 
   let ua = navigator.userAgent.toLowerCase()
-  console.log(ua)
 
   if (ua.includes('ipad') || ua.includes('iphone')) {
     document.querySelector('.body').classList.add('mobile')
@@ -285,6 +323,21 @@ function update_temps() {
   }))
 }
 
+function update_temp_winner() {
+  let temp_winner_score = 0
+
+  let temp_winners = document.querySelectorAll('.temp-winner')
+
+  temp_winners.forEach((function(el) {
+    if (el.checked) {
+      temp_winner_score = el.value
+    }
+  }))
+
+  document.getElementById('temp-score').innerHTML = temp_winner_score
+
+}
+
 function update_investments() {
   let investment_rows = document.querySelectorAll('.development-row')
 
@@ -407,50 +460,62 @@ function restore_all() {
 
   if (checks != null) {
 
-  for (let [key, value] of Object.entries(checks)) {
+    for (let [key, value] of Object.entries(checks)) {
 
-    let elm = document.getElementById(`${key}`)
+      let elm = document.getElementById(`${key}`)
 
-    if (elm.checked == false && value == true) {
-      elm.checked = value
-      elm.dispatchEvent(new Event('change', { bubbles: true }))
-    } else {
-      elm.checked = value
+      if (elm.checked == false && value == true) {
+        elm.checked = value
+        elm.dispatchEvent(new Event('click', { bubbles: true }))
+      } else {
+        elm.checked = value
+      }
     }
-  }
   }
 
   let texts = JSON.parse(localStorage.getItem('all_texts'))
 
   if (texts != null) {
-  for (let [key, value] of Object.entries(texts)) {
+    for (let [key, value] of Object.entries(texts)) {
 
-    let elm = document.getElementById(`${key}`)
+      let elm = document.getElementById(`${key}`)
 
-    elm.value = value
-    elm.dispatchEvent(new Event('change', { bubbles: true }))
+      elm.value = value
+      elm.dispatchEvent(new Event('restore', { bubbles: true }))
 
+    }
   }
-  }
+  update_developments(fence_selector, house_selector, development_selector, amount_selector)
+  update_parks()
+  update_temps()
+  update_temp_winner()
+  update_investments()  
+  update_pools()
+  update_city_plans()
+  update_bis()
+  update_permit_refusals()
+  update_total()
+
   ok_to_save = true
 }
 
 function reset_all() {
   document.querySelectorAll('input[type="text"]').forEach((function(input){
     input.value = ''
-    input.dispatchEvent(new Event('change', { bubbles: true }))
+    input.dispatchEvent(new Event('restore', { bubbles: true }))
   }))
 
   document.querySelectorAll('input[type="checkbox"]').forEach((function(input){
     if (input.checked && input.disabled == false) {
       input.checked = false
-      input.dispatchEvent(new Event('change', { bubbles: true }))
+      input.dispatchEvent(new Event('click', { bubbles: true }))
     }
   }))
-
+  localStorage.clear()
   update_developments(fence_selector, house_selector, development_selector, amount_selector)
   update_parks()
   update_temps()
+  update_temp_winner()
   update_investments()
 }
 

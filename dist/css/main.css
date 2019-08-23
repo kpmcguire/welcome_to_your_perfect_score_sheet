@@ -142,7 +142,7 @@ body {
 
 /* line 140, src/sass/components/_customizations.scss */
 .fence-active label {
-  background: linear-gradient(to right, transparent 0, transparent calc(50% - 5px), rgba(255, 255, 255, 0.8) calc(50% - 5px), rgba(255, 255, 255, 0.8) calc(50% + 5px), transparent calc(50% + 5px), transparent 100%);
+  background: linear-gradient(to right, transparent 0, transparent calc(50% - 5px), rgba(0, 0, 0, 0.6) calc(50% - 5px), rgba(0, 0, 0, 0.6) calc(50% + 5px), transparent calc(50% + 5px), transparent 100%);
 }
 
 /* line 146, src/sass/components/_customizations.scss */
@@ -672,10 +672,12 @@ body {
 /* line 557, src/sass/components/_customizations.scss */
 #temp-score {
   top: 1070px;
-  left: 380px;
+  left: 382px;
+  width: 2em;
+  text-align: center;
 }
 
-/* line 562, src/sass/components/_customizations.scss */
+/* line 564, src/sass/components/_customizations.scss */
 .temp-winners {
   top: 993px;
   left: 352px;
@@ -684,11 +686,11 @@ body {
   display: flex;
 }
 
-/* line 568, src/sass/components/_customizations.scss */
+/* line 570, src/sass/components/_customizations.scss */
 #developments {
-  left: 528px;
-  top: 1005px;
-  width: 295px;
+  left: 523px;
+  top: 1002px;
+  width: 308px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -698,53 +700,54 @@ body {
   font-size: 0.8em;
 }
 
-/* line 581, src/sass/components/_customizations.scss */
-.mobile-safari #developments {
-  top: 1002px;
+/* line 578, src/sass/components/_customizations.scss */
+#developments div {
+  width: 2em;
+  text-align: center;
 }
 
-/* line 585, src/sass/components/_customizations.scss */
+/* line 584, src/sass/components/_customizations.scss */
 .mobile.safari .development-row .development-label + .development-label {
   margin-top: -1.5px;
 }
 
-/* line 589, src/sass/components/_customizations.scss */
+/* line 588, src/sass/components/_customizations.scss */
 #development-row-1 {
   left: 510px;
   top: 885px;
 }
 
-/* line 594, src/sass/components/_customizations.scss */
+/* line 593, src/sass/components/_customizations.scss */
 #development-row-2 {
   left: 566px;
   top: 868px;
 }
 
-/* line 599, src/sass/components/_customizations.scss */
+/* line 598, src/sass/components/_customizations.scss */
 #development-row-3 {
   left: 618px;
   top: 847px;
 }
 
-/* line 604, src/sass/components/_customizations.scss */
+/* line 603, src/sass/components/_customizations.scss */
 #development-row-4 {
   left: 671px;
   top: 827px;
 }
 
-/* line 609, src/sass/components/_customizations.scss */
+/* line 608, src/sass/components/_customizations.scss */
 #development-row-5 {
   left: 727px;
   top: 810px;
 }
 
-/* line 614, src/sass/components/_customizations.scss */
+/* line 613, src/sass/components/_customizations.scss */
 #development-row-6 {
   left: 779px;
   top: 791px;
 }
 
-/* line 619, src/sass/components/_customizations.scss */
+/* line 618, src/sass/components/_customizations.scss */
 .development-scores-container {
   top: 1072px;
   left: 505px;
@@ -757,37 +760,37 @@ body {
           justify-content: space-between;
 }
 
-/* line 627, src/sass/components/_customizations.scss */
+/* line 626, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-2 {
   position: relative;
   left: -2px;
 }
 
-/* line 632, src/sass/components/_customizations.scss */
+/* line 631, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-3 {
   position: relative;
   left: -3px;
 }
 
-/* line 637, src/sass/components/_customizations.scss */
+/* line 636, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-4 {
   position: relative;
   left: -5px;
 }
 
-/* line 642, src/sass/components/_customizations.scss */
+/* line 641, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-5 {
   position: relative;
   left: -3px;
 }
 
-/* line 647, src/sass/components/_customizations.scss */
+/* line 646, src/sass/components/_customizations.scss */
 .development-scores-container .total-sub {
   width: 2em;
   text-align: center;
 }
 
-/* line 654, src/sass/components/_customizations.scss */
+/* line 653, src/sass/components/_customizations.scss */
 #bis-container {
   left: 878px;
   top: 795px;
@@ -799,32 +802,32 @@ body {
       flex-wrap: wrap;
 }
 
-/* line 661, src/sass/components/_customizations.scss */
+/* line 660, src/sass/components/_customizations.scss */
 .mobile.safari #bis-container {
   left: 876px;
 }
 
-/* line 665, src/sass/components/_customizations.scss */
+/* line 664, src/sass/components/_customizations.scss */
 #bis-container .bis-label {
   margin-bottom: 15px;
 }
 
-/* line 668, src/sass/components/_customizations.scss */
+/* line 667, src/sass/components/_customizations.scss */
 .mobile.safari #bis-container .bis-label {
   margin-bottom: 13.5px;
 }
 
-/* line 672, src/sass/components/_customizations.scss */
+/* line 671, src/sass/components/_customizations.scss */
 #bis-container .bis-label:nth-child(even) {
   margin-left: 0;
 }
 
-/* line 675, src/sass/components/_customizations.scss */
+/* line 674, src/sass/components/_customizations.scss */
 #bis-container .bis-label:nth-child(odd) {
   margin-left: 10px;
 }
 
-/* line 681, src/sass/components/_customizations.scss */
+/* line 680, src/sass/components/_customizations.scss */
 #score-bis-container {
   width: 2em;
   text-align: center;
@@ -832,24 +835,24 @@ body {
   top: 1070px;
 }
 
-/* line 689, src/sass/components/_customizations.scss */
+/* line 688, src/sass/components/_customizations.scss */
 #permit-refusal-container {
   left: 1004px;
   top: 863px;
 }
 
-/* line 693, src/sass/components/_customizations.scss */
+/* line 692, src/sass/components/_customizations.scss */
 #permit-refusal-container .permit-refusal-label {
   margin-bottom: 13px;
 }
 
-/* line 698, src/sass/components/_customizations.scss */
+/* line 697, src/sass/components/_customizations.scss */
 .mobile-safari #permit-refusal-container {
   left: 1000px;
   top: 856px;
 }
 
-/* line 703, src/sass/components/_customizations.scss */
+/* line 702, src/sass/components/_customizations.scss */
 #score-permit-refusal-container {
   left: 1007px;
   top: 1070px;
@@ -857,7 +860,7 @@ body {
   text-align: center;
 }
 
-/* line 711, src/sass/components/_customizations.scss */
+/* line 710, src/sass/components/_customizations.scss */
 #total-score {
   top: 1070px;
   left: 1090px;
@@ -865,7 +868,7 @@ body {
   text-align: center;
 }
 
-/* line 718, src/sass/components/_customizations.scss */
+/* line 717, src/sass/components/_customizations.scss */
 #reset {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: #e8dfb5;
@@ -882,12 +885,12 @@ body {
   left: 45px;
 }
 
-/* line 734, src/sass/components/_customizations.scss */
+/* line 733, src/sass/components/_customizations.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 740, src/sass/components/_customizations.scss */
+/* line 739, src/sass/components/_customizations.scss */
 .reload-double {
   display: inline-block;
   position: relative;
@@ -901,7 +904,7 @@ body {
   top: 0.1em;
 }
 
-/* line 751, src/sass/components/_customizations.scss */
+/* line 750, src/sass/components/_customizations.scss */
 .reload-double:before, .reload-double:after {
   border-style: solid;
   content: '';
@@ -912,7 +915,7 @@ body {
   transform: rotate(-45deg);
 }
 
-/* line 760, src/sass/components/_customizations.scss */
+/* line 759, src/sass/components/_customizations.scss */
 .reload-double:after {
   border-color: transparent transparent transparent #cab654;
   border-width: .3125em 0 .3125em .5em;
@@ -920,7 +923,7 @@ body {
   left: .04em;
 }
 
-/* line 766, src/sass/components/_customizations.scss */
+/* line 765, src/sass/components/_customizations.scss */
 .reload-double:before {
   border-color: transparent #cab654 transparent transparent;
   border-width: .3125em .5em .3125em 0;
