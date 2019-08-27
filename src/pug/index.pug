@@ -3,9 +3,11 @@ html
   head
     link(rel="stylesheet", href="css/main.min.css")
     meta(name="viewport" content="width=device-width, user-scalable=no")
+    link(rel="apple-touch-icon" href="img/icon.png")
+    link(rel="icon" type="image/png" href="img/icon.png")
   body.body
     .wrapper
-        form.welcome-to-scoresheet-wrapper(style="background-image: url('img/welcome_to.png')")
+        form.welcome-to-scoresheet-wrapper(style="background-image: url('img/welcome_to.jpg')")
             input#town-name(type="text" autocomplete="off")
             - let rows = [...Array(3).keys()]
             each r in rows

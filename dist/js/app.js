@@ -163,7 +163,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   restore_all()
 
   let ua = navigator.userAgent.toLowerCase()
-
   if (ua.includes('ipad') || ua.includes('iphone')) {
     document.querySelector('.body').classList.add('mobile')
   }

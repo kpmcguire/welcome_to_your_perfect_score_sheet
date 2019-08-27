@@ -14,17 +14,23 @@ h1 {
 }
 
 /* line 12, src/sass/components/_customizations.scss */
+html {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+/* line 16, src/sass/components/_customizations.scss */
 body, input {
   font-family: 'blokletters_balpenbalpen', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* line 17, src/sass/components/_customizations.scss */
+/* line 21, src/sass/components/_customizations.scss */
 body {
   background-color: #cddda9;
   margin: 0;
 }
 
-/* line 22, src/sass/components/_customizations.scss */
+/* line 26, src/sass/components/_customizations.scss */
 .development {
   outline: 2px solid #5e732d;
   color: #5e732d;
@@ -36,14 +42,14 @@ body {
   position: relative;
 }
 
-/* line 30, src/sass/components/_customizations.scss */
+/* line 34, src/sass/components/_customizations.scss */
 .development .amount {
   position: absolute;
   left: calc(50% - 0.25em);
   top: -1.6em;
 }
 
-/* line 37, src/sass/components/_customizations.scss */
+/* line 41, src/sass/components/_customizations.scss */
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,12 +59,12 @@ body {
           justify-content: flex-end;
 }
 
-/* line 42, src/sass/components/_customizations.scss */
+/* line 46, src/sass/components/_customizations.scss */
 .house {
   position: relative;
 }
 
-/* line 45, src/sass/components/_customizations.scss */
+/* line 49, src/sass/components/_customizations.scss */
 .house input {
   position: relative;
   top: 31px;
@@ -73,55 +79,55 @@ body {
   padding: 1px;
 }
 
-/* line 58, src/sass/components/_customizations.scss */
+/* line 62, src/sass/components/_customizations.scss */
 .mobile.safari .house input {
   padding: 0.5px;
 }
 
-/* line 62, src/sass/components/_customizations.scss */
+/* line 66, src/sass/components/_customizations.scss */
 .safari .house input {
   padding: 0.75px;
 }
 
-/* line 66, src/sass/components/_customizations.scss */
+/* line 70, src/sass/components/_customizations.scss */
 .house input:focus {
   outline: 2px solid magenta;
 }
 
-/* line 90, src/sass/components/_customizations.scss */
+/* line 94, src/sass/components/_customizations.scss */
 .house.gloop input {
   outline: 2px solid #9900ff;
   background-color: rgba(153, 0, 255, 0.25);
 }
 
-/* line 98, src/sass/components/_customizations.scss */
+/* line 102, src/sass/components/_customizations.scss */
 .hide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 101, src/sass/components/_customizations.scss */
+/* line 105, src/sass/components/_customizations.scss */
 .hide .amount {
   display: none;
 }
 
-/* line 106, src/sass/components/_customizations.scss */
+/* line 110, src/sass/components/_customizations.scss */
 .amount {
   display: none;
 }
 
-/* line 110, src/sass/components/_customizations.scss */
+/* line 114, src/sass/components/_customizations.scss */
 .development .amount {
   display: block;
 }
 
-/* line 114, src/sass/components/_customizations.scss */
+/* line 118, src/sass/components/_customizations.scss */
 .fence-wrapper {
   position: relative;
 }
 
-/* line 117, src/sass/components/_customizations.scss */
+/* line 121, src/sass/components/_customizations.scss */
 .fence-wrapper label {
   display: block;
   width: 0.5em;
@@ -132,7 +138,7 @@ body {
   left: 0;
 }
 
-/* line 132, src/sass/components/_customizations.scss */
+/* line 136, src/sass/components/_customizations.scss */
 .fence-wrapper input {
   opacity: 0;
   left: -9999px;
@@ -140,236 +146,236 @@ body {
   height: 0;
 }
 
-/* line 140, src/sass/components/_customizations.scss */
+/* line 144, src/sass/components/_customizations.scss */
 .fence-active label {
   background: linear-gradient(to right, transparent 0, transparent calc(50% - 5px), rgba(0, 0, 0, 0.6) calc(50% - 5px), rgba(0, 0, 0, 0.6) calc(50% + 5px), transparent calc(50% + 5px), transparent 100%);
 }
 
-/* line 146, src/sass/components/_customizations.scss */
+/* line 150, src/sass/components/_customizations.scss */
 .row .fence-1-2 {
   left: 0.5px;
 }
 
-/* line 149, src/sass/components/_customizations.scss */
+/* line 153, src/sass/components/_customizations.scss */
 .row .house-1-3 {
   top: 12px;
 }
 
-/* line 152, src/sass/components/_customizations.scss */
+/* line 156, src/sass/components/_customizations.scss */
 .row .fence-1-3 {
   left: 2px;
 }
 
-/* line 155, src/sass/components/_customizations.scss */
+/* line 159, src/sass/components/_customizations.scss */
 .row .fence-1-5 {
   left: 2px;
 }
 
-/* line 158, src/sass/components/_customizations.scss */
+/* line 162, src/sass/components/_customizations.scss */
 .row .house-1-6 {
   left: 2px;
 }
 
-/* line 161, src/sass/components/_customizations.scss */
+/* line 165, src/sass/components/_customizations.scss */
 .row .fence-1-6 {
   left: 1px;
 }
 
-/* line 164, src/sass/components/_customizations.scss */
+/* line 168, src/sass/components/_customizations.scss */
 .row .house-1-7 {
   top: 13px;
 }
 
-/* line 167, src/sass/components/_customizations.scss */
+/* line 171, src/sass/components/_customizations.scss */
 .row .house-1-8 {
   top: 13px;
 }
 
-/* line 170, src/sass/components/_customizations.scss */
+/* line 174, src/sass/components/_customizations.scss */
 .row .house-1-9 {
   left: -1px;
 }
 
-/* line 173, src/sass/components/_customizations.scss */
+/* line 177, src/sass/components/_customizations.scss */
 .row .fence-1-9 {
   left: -1px;
 }
 
-/* line 176, src/sass/components/_customizations.scss */
+/* line 180, src/sass/components/_customizations.scss */
 .row .house-1-10 {
   left: -3px;
 }
 
-/* line 179, src/sass/components/_customizations.scss */
+/* line 183, src/sass/components/_customizations.scss */
 .row .fence-1-10 {
   left: -4px;
 }
 
-/* line 183, src/sass/components/_customizations.scss */
+/* line 187, src/sass/components/_customizations.scss */
 .row .fence-2-1 {
   left: 2px;
 }
 
-/* line 187, src/sass/components/_customizations.scss */
+/* line 191, src/sass/components/_customizations.scss */
 .row .fence-2-4 {
   left: 2px;
 }
 
-/* line 191, src/sass/components/_customizations.scss */
+/* line 195, src/sass/components/_customizations.scss */
 .row .fence-2-6 {
   left: 1px;
 }
 
-/* line 195, src/sass/components/_customizations.scss */
+/* line 199, src/sass/components/_customizations.scss */
 .row .fence-2-9 {
   left: -2px;
 }
 
-/* line 198, src/sass/components/_customizations.scss */
+/* line 202, src/sass/components/_customizations.scss */
 .row .fence-2-10 {
   left: -2px;
 }
 
-/* line 202, src/sass/components/_customizations.scss */
+/* line 206, src/sass/components/_customizations.scss */
 .row .fence-2-11 {
   left: -3px;
 }
 
-/* line 206, src/sass/components/_customizations.scss */
+/* line 210, src/sass/components/_customizations.scss */
 .row .house-2-1 {
   top: 16px;
   left: 3px;
 }
 
-/* line 211, src/sass/components/_customizations.scss */
+/* line 215, src/sass/components/_customizations.scss */
 .row .house-2-2 {
   top: 3px;
 }
 
-/* line 214, src/sass/components/_customizations.scss */
+/* line 218, src/sass/components/_customizations.scss */
 .row .house-2-3 {
   top: 3px;
 }
 
-/* line 217, src/sass/components/_customizations.scss */
+/* line 221, src/sass/components/_customizations.scss */
 .row .house-2-4 {
   top: 15px;
   left: 0px;
 }
 
-/* line 221, src/sass/components/_customizations.scss */
+/* line 225, src/sass/components/_customizations.scss */
 .row .house-2-5 {
   top: 3px;
 }
 
-/* line 224, src/sass/components/_customizations.scss */
+/* line 228, src/sass/components/_customizations.scss */
 .row .house-2-6 {
   top: 3px;
 }
 
-/* line 227, src/sass/components/_customizations.scss */
+/* line 231, src/sass/components/_customizations.scss */
 .row .house-2-7 {
   top: 3px;
 }
 
-/* line 230, src/sass/components/_customizations.scss */
+/* line 234, src/sass/components/_customizations.scss */
 .row .house-2-8 {
   top: 15px;
 }
 
-/* line 233, src/sass/components/_customizations.scss */
+/* line 237, src/sass/components/_customizations.scss */
 .row .house-2-9 {
   top: 3px;
   left: -2px;
 }
 
-/* line 237, src/sass/components/_customizations.scss */
+/* line 241, src/sass/components/_customizations.scss */
 .row .house-2-10 {
   top: 2px;
   left: -1px;
 }
 
-/* line 242, src/sass/components/_customizations.scss */
+/* line 246, src/sass/components/_customizations.scss */
 .row .house-2-11 {
   top: 2px;
   left: -2px;
 }
 
-/* line 247, src/sass/components/_customizations.scss */
+/* line 251, src/sass/components/_customizations.scss */
 .row .fence-3-1 {
   left: 2px;
 }
 
-/* line 250, src/sass/components/_customizations.scss */
+/* line 254, src/sass/components/_customizations.scss */
 .row .fence-3-2 {
   left: 2px;
 }
 
-/* line 253, src/sass/components/_customizations.scss */
+/* line 257, src/sass/components/_customizations.scss */
 .row .fence-3-5 {
   left: 1px;
 }
 
-/* line 256, src/sass/components/_customizations.scss */
+/* line 260, src/sass/components/_customizations.scss */
 .row .fence-3-10 {
   left: -2px;
 }
 
-/* line 259, src/sass/components/_customizations.scss */
+/* line 263, src/sass/components/_customizations.scss */
 .row .fence-3-11 {
   left: -2px;
 }
 
-/* line 262, src/sass/components/_customizations.scss */
+/* line 266, src/sass/components/_customizations.scss */
 .row .fence-3-12 {
   left: -3px;
 }
 
-/* line 266, src/sass/components/_customizations.scss */
+/* line 270, src/sass/components/_customizations.scss */
 .row .house-3-1 {
   left: 0.5px;
 }
 
-/* line 270, src/sass/components/_customizations.scss */
+/* line 274, src/sass/components/_customizations.scss */
 .row .house-3-2 {
   left: 2.5px;
   top: 12px;
 }
 
-/* line 275, src/sass/components/_customizations.scss */
+/* line 279, src/sass/components/_customizations.scss */
 .row .house-3-3 {
   left: -0.5px;
 }
 
-/* line 278, src/sass/components/_customizations.scss */
+/* line 282, src/sass/components/_customizations.scss */
 .row .house-3-7 {
   top: 12px;
   left: 0.5px;
 }
 
-/* line 283, src/sass/components/_customizations.scss */
+/* line 287, src/sass/components/_customizations.scss */
 .row .house-3-10 {
   left: -2px;
 }
 
-/* line 286, src/sass/components/_customizations.scss */
+/* line 290, src/sass/components/_customizations.scss */
 .row .house-3-11 {
   left: -1.5px;
   top: 11px;
 }
 
-/* line 290, src/sass/components/_customizations.scss */
+/* line 294, src/sass/components/_customizations.scss */
 .row .house-3-12 {
   left: -3.5px;
   top: -0.5px;
 }
 
-/* line 296, src/sass/components/_customizations.scss */
+/* line 300, src/sass/components/_customizations.scss */
 .hidden {
   display: none;
 }
 
-/* line 300, src/sass/components/_customizations.scss */
+/* line 304, src/sass/components/_customizations.scss */
 .scribble-input-label {
   cursor: pointer;
   display: -webkit-box;
@@ -377,7 +383,7 @@ body {
   display: flex;
 }
 
-/* line 304, src/sass/components/_customizations.scss */
+/* line 308, src/sass/components/_customizations.scss */
 .scribble-input-label .scribble-control {
   display: inline-block;
   border: 1px solid transparent;
@@ -385,7 +391,7 @@ body {
   height: 2em;
 }
 
-/* line 311, src/sass/components/_customizations.scss */
+/* line 315, src/sass/components/_customizations.scss */
 .scribble-input-label .scribble-input {
   display: block;
   position: absolute;
@@ -395,19 +401,19 @@ body {
   height: 0;
 }
 
-/* line 319, src/sass/components/_customizations.scss */
+/* line 323, src/sass/components/_customizations.scss */
 .scribble-input-label .scribble-input:checked + .scribble-control {
   background-image: url("../img/scribble.png");
   background-size: cover;
   opacity: 0.8;
 }
 
-/* line 327, src/sass/components/_customizations.scss */
+/* line 331, src/sass/components/_customizations.scss */
 body {
   zoom: 66.6%;
 }
 
-/* line 331, src/sass/components/_customizations.scss */
+/* line 335, src/sass/components/_customizations.scss */
 .welcome-to-scoresheet-wrapper {
   width: 1157px;
   height: 1157px;
@@ -415,7 +421,7 @@ body {
   background-size: cover;
 }
 
-/* line 340, src/sass/components/_customizations.scss */
+/* line 344, src/sass/components/_customizations.scss */
 #town-name {
   position: absolute;
   left: 85px;
@@ -429,12 +435,12 @@ body {
   text-align: center;
 }
 
-/* line 351, src/sass/components/_customizations.scss */
+/* line 355, src/sass/components/_customizations.scss */
 #town-name:focus {
   outline: 2px solid magenta;
 }
 
-/* line 356, src/sass/components/_customizations.scss */
+/* line 360, src/sass/components/_customizations.scss */
 .row-1, .row-2, .row-3,
 #city-plans-total,
 .city-plan-score-input,
@@ -459,25 +465,25 @@ body {
   position: absolute;
 }
 
-/* line 381, src/sass/components/_customizations.scss */
+/* line 385, src/sass/components/_customizations.scss */
 .row-1 {
   top: 89px;
   left: 238px;
 }
 
-/* line 386, src/sass/components/_customizations.scss */
+/* line 390, src/sass/components/_customizations.scss */
 .row-2 {
   top: 302px;
   left: 158px;
 }
 
-/* line 391, src/sass/components/_customizations.scss */
+/* line 395, src/sass/components/_customizations.scss */
 .row-3 {
   top: 519px;
   left: 78px;
 }
 
-/* line 396, src/sass/components/_customizations.scss */
+/* line 400, src/sass/components/_customizations.scss */
 #city-plans-total {
   top: 1070px;
   left: 52px;
@@ -485,25 +491,25 @@ body {
   text-align: center;
 }
 
-/* line 404, src/sass/components/_customizations.scss */
+/* line 408, src/sass/components/_customizations.scss */
 #city-plan-score-1 {
   top: 792px;
   left: 49px;
 }
 
-/* line 409, src/sass/components/_customizations.scss */
+/* line 413, src/sass/components/_customizations.scss */
 #city-plan-score-2 {
   top: 888px;
   left: 48px;
 }
 
-/* line 415, src/sass/components/_customizations.scss */
+/* line 419, src/sass/components/_customizations.scss */
 #city-plan-score-3 {
   top: 982px;
   left: 47px;
 }
 
-/* line 420, src/sass/components/_customizations.scss */
+/* line 424, src/sass/components/_customizations.scss */
 .score-input {
   background-color: transparent;
   width: 32px;
@@ -514,76 +520,76 @@ body {
   padding: 1px;
 }
 
-/* line 429, src/sass/components/_customizations.scss */
+/* line 433, src/sass/components/_customizations.scss */
 .score-input:focus {
   outline: 2px solid magenta;
 }
 
-/* line 434, src/sass/components/_customizations.scss */
+/* line 438, src/sass/components/_customizations.scss */
 .park-score {
   width: 2em;
   text-align: center;
 }
 
-/* line 440, src/sass/components/_customizations.scss */
+/* line 444, src/sass/components/_customizations.scss */
 .park-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 444, src/sass/components/_customizations.scss */
+/* line 448, src/sass/components/_customizations.scss */
 .park-wrapper + .park-wrapper {
   margin-left: 6.6px;
 }
 
-/* line 448, src/sass/components/_customizations.scss */
+/* line 452, src/sass/components/_customizations.scss */
 .mobile.safari .park-wrapper + .park-wrapper {
   margin-left: 6px;
 }
 
-/* line 452, src/sass/components/_customizations.scss */
+/* line 456, src/sass/components/_customizations.scss */
 #park-row-1 {
   top: 36px;
   left: 929px;
 }
 
-/* line 457, src/sass/components/_customizations.scss */
+/* line 461, src/sass/components/_customizations.scss */
 #park-row-2 {
   top: 250px;
   left: 888px;
 }
 
-/* line 462, src/sass/components/_customizations.scss */
+/* line 466, src/sass/components/_customizations.scss */
 #park-row-3 {
   top: 464px;
   left: 848px;
 }
 
-/* line 467, src/sass/components/_customizations.scss */
+/* line 471, src/sass/components/_customizations.scss */
 .mobile.safari #park-row-3 {
   left: 846px;
 }
 
-/* line 471, src/sass/components/_customizations.scss */
+/* line 475, src/sass/components/_customizations.scss */
 #score-park-row-1 {
   top: 863px;
   left: 147px;
 }
 
-/* line 476, src/sass/components/_customizations.scss */
+/* line 480, src/sass/components/_customizations.scss */
 #score-park-row-2 {
   top: 923px;
   left: 147px;
 }
 
-/* line 481, src/sass/components/_customizations.scss */
+/* line 485, src/sass/components/_customizations.scss */
 #score-park-row-3 {
   top: 982px;
   left: 147px;
 }
 
-/* line 486, src/sass/components/_customizations.scss */
+/* line 490, src/sass/components/_customizations.scss */
 #park-total {
   top: 1071px;
   left: 147px;
@@ -591,7 +597,7 @@ body {
   text-align: center;
 }
 
-/* line 493, src/sass/components/_customizations.scss */
+/* line 497, src/sass/components/_customizations.scss */
 #pools-container {
   left: 236px;
   top: 832px;
@@ -603,22 +609,22 @@ body {
       flex-wrap: wrap;
 }
 
-/* line 500, src/sass/components/_customizations.scss */
+/* line 504, src/sass/components/_customizations.scss */
 #pools-container .pool-label {
   margin-bottom: 5px;
 }
 
-/* line 503, src/sass/components/_customizations.scss */
+/* line 507, src/sass/components/_customizations.scss */
 #pools-container .pool-label:nth-child(even) {
   margin-left: 0;
 }
 
-/* line 506, src/sass/components/_customizations.scss */
+/* line 510, src/sass/components/_customizations.scss */
 #pools-container .pool-label:nth-child(odd) {
   margin-left: 5px;
 }
 
-/* line 513, src/sass/components/_customizations.scss */
+/* line 517, src/sass/components/_customizations.scss */
 #score-pools-container {
   left: 255px;
   top: 1070px;
@@ -626,7 +632,7 @@ body {
   text-align: center;
 }
 
-/* line 521, src/sass/components/_customizations.scss */
+/* line 525, src/sass/components/_customizations.scss */
 .temp-row {
   top: 818px;
   left: 364px;
@@ -638,30 +644,30 @@ body {
   width: 100px;
 }
 
-/* line 528, src/sass/components/_customizations.scss */
+/* line 532, src/sass/components/_customizations.scss */
 .temp-row .scribble-control {
   width: 1.5em;
   height: 1.45em;
   border: 0;
 }
 
-/* line 535, src/sass/components/_customizations.scss */
+/* line 539, src/sass/components/_customizations.scss */
 .temp-row label:nth-child(1) {
   margin-left: 0;
 }
 
-/* line 539, src/sass/components/_customizations.scss */
+/* line 543, src/sass/components/_customizations.scss */
 .temp-row label:nth-child(2), .temp-row label:nth-child(5), .temp-row label:nth-child(8), .temp-row label:nth-child(11) {
   margin-left: 27px;
 }
 
-/* line 543, src/sass/components/_customizations.scss */
+/* line 547, src/sass/components/_customizations.scss */
 .temp-row label:nth-child(3), .temp-row label:nth-child(6), .temp-row label:nth-child(9) {
   margin-left: 27px;
   margin-right: 50px;
 }
 
-/* line 549, src/sass/components/_customizations.scss */
+/* line 553, src/sass/components/_customizations.scss */
 #score-temp-row-1 {
   top: 788px;
   left: 385px;
@@ -669,7 +675,7 @@ body {
   text-align: center;
 }
 
-/* line 557, src/sass/components/_customizations.scss */
+/* line 561, src/sass/components/_customizations.scss */
 #temp-score {
   top: 1070px;
   left: 382px;
@@ -677,7 +683,7 @@ body {
   text-align: center;
 }
 
-/* line 564, src/sass/components/_customizations.scss */
+/* line 568, src/sass/components/_customizations.scss */
 .temp-winners {
   top: 993px;
   left: 352px;
@@ -686,7 +692,7 @@ body {
   display: flex;
 }
 
-/* line 570, src/sass/components/_customizations.scss */
+/* line 574, src/sass/components/_customizations.scss */
 #developments {
   left: 523px;
   top: 1002px;
@@ -700,54 +706,54 @@ body {
   font-size: 0.8em;
 }
 
-/* line 578, src/sass/components/_customizations.scss */
+/* line 582, src/sass/components/_customizations.scss */
 #developments div {
   width: 2em;
   text-align: center;
 }
 
-/* line 584, src/sass/components/_customizations.scss */
+/* line 588, src/sass/components/_customizations.scss */
 .mobile.safari .development-row .development-label + .development-label {
   margin-top: -1.5px;
 }
 
-/* line 588, src/sass/components/_customizations.scss */
+/* line 592, src/sass/components/_customizations.scss */
 #development-row-1 {
   left: 510px;
   top: 885px;
 }
 
-/* line 593, src/sass/components/_customizations.scss */
+/* line 597, src/sass/components/_customizations.scss */
 #development-row-2 {
   left: 566px;
   top: 868px;
 }
 
-/* line 598, src/sass/components/_customizations.scss */
+/* line 602, src/sass/components/_customizations.scss */
 #development-row-3 {
   left: 618px;
   top: 847px;
 }
 
-/* line 603, src/sass/components/_customizations.scss */
+/* line 607, src/sass/components/_customizations.scss */
 #development-row-4 {
   left: 671px;
   top: 827px;
 }
 
-/* line 608, src/sass/components/_customizations.scss */
+/* line 612, src/sass/components/_customizations.scss */
 #development-row-5 {
   left: 727px;
   top: 810px;
 }
 
-/* line 613, src/sass/components/_customizations.scss */
+/* line 617, src/sass/components/_customizations.scss */
 #development-row-6 {
   left: 779px;
   top: 791px;
 }
 
-/* line 618, src/sass/components/_customizations.scss */
+/* line 622, src/sass/components/_customizations.scss */
 .development-scores-container {
   top: 1072px;
   left: 505px;
@@ -760,37 +766,37 @@ body {
           justify-content: space-between;
 }
 
-/* line 626, src/sass/components/_customizations.scss */
+/* line 630, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-2 {
   position: relative;
   left: -2px;
 }
 
-/* line 631, src/sass/components/_customizations.scss */
+/* line 635, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-3 {
   position: relative;
   left: -3px;
 }
 
-/* line 636, src/sass/components/_customizations.scss */
+/* line 640, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-4 {
   position: relative;
   left: -5px;
 }
 
-/* line 641, src/sass/components/_customizations.scss */
+/* line 645, src/sass/components/_customizations.scss */
 .development-scores-container #score-development-row-5 {
   position: relative;
   left: -3px;
 }
 
-/* line 646, src/sass/components/_customizations.scss */
+/* line 650, src/sass/components/_customizations.scss */
 .development-scores-container .total-sub {
   width: 2em;
   text-align: center;
 }
 
-/* line 653, src/sass/components/_customizations.scss */
+/* line 657, src/sass/components/_customizations.scss */
 #bis-container {
   left: 878px;
   top: 795px;
@@ -802,32 +808,32 @@ body {
       flex-wrap: wrap;
 }
 
-/* line 660, src/sass/components/_customizations.scss */
+/* line 664, src/sass/components/_customizations.scss */
 .mobile.safari #bis-container {
   left: 876px;
 }
 
-/* line 664, src/sass/components/_customizations.scss */
+/* line 668, src/sass/components/_customizations.scss */
 #bis-container .bis-label {
   margin-bottom: 15px;
 }
 
-/* line 667, src/sass/components/_customizations.scss */
+/* line 671, src/sass/components/_customizations.scss */
 .mobile.safari #bis-container .bis-label {
   margin-bottom: 13.5px;
 }
 
-/* line 671, src/sass/components/_customizations.scss */
+/* line 675, src/sass/components/_customizations.scss */
 #bis-container .bis-label:nth-child(even) {
   margin-left: 0;
 }
 
-/* line 674, src/sass/components/_customizations.scss */
+/* line 678, src/sass/components/_customizations.scss */
 #bis-container .bis-label:nth-child(odd) {
   margin-left: 10px;
 }
 
-/* line 680, src/sass/components/_customizations.scss */
+/* line 684, src/sass/components/_customizations.scss */
 #score-bis-container {
   width: 2em;
   text-align: center;
@@ -835,24 +841,24 @@ body {
   top: 1070px;
 }
 
-/* line 688, src/sass/components/_customizations.scss */
+/* line 692, src/sass/components/_customizations.scss */
 #permit-refusal-container {
   left: 1004px;
   top: 863px;
 }
 
-/* line 692, src/sass/components/_customizations.scss */
+/* line 696, src/sass/components/_customizations.scss */
 #permit-refusal-container .permit-refusal-label {
   margin-bottom: 13px;
 }
 
-/* line 697, src/sass/components/_customizations.scss */
+/* line 701, src/sass/components/_customizations.scss */
 .mobile-safari #permit-refusal-container {
   left: 1000px;
   top: 856px;
 }
 
-/* line 702, src/sass/components/_customizations.scss */
+/* line 706, src/sass/components/_customizations.scss */
 #score-permit-refusal-container {
   left: 1007px;
   top: 1070px;
@@ -860,7 +866,7 @@ body {
   text-align: center;
 }
 
-/* line 710, src/sass/components/_customizations.scss */
+/* line 714, src/sass/components/_customizations.scss */
 #total-score {
   top: 1070px;
   left: 1090px;
@@ -868,7 +874,7 @@ body {
   text-align: center;
 }
 
-/* line 717, src/sass/components/_customizations.scss */
+/* line 721, src/sass/components/_customizations.scss */
 #reset {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: #e8dfb5;
@@ -885,12 +891,12 @@ body {
   left: 45px;
 }
 
-/* line 733, src/sass/components/_customizations.scss */
+/* line 737, src/sass/components/_customizations.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 739, src/sass/components/_customizations.scss */
+/* line 743, src/sass/components/_customizations.scss */
 .reload-double {
   display: inline-block;
   position: relative;
@@ -904,7 +910,7 @@ body {
   top: 0.1em;
 }
 
-/* line 750, src/sass/components/_customizations.scss */
+/* line 754, src/sass/components/_customizations.scss */
 .reload-double:before, .reload-double:after {
   border-style: solid;
   content: '';
@@ -915,7 +921,7 @@ body {
   transform: rotate(-45deg);
 }
 
-/* line 759, src/sass/components/_customizations.scss */
+/* line 763, src/sass/components/_customizations.scss */
 .reload-double:after {
   border-color: transparent transparent transparent #cab654;
   border-width: .3125em 0 .3125em .5em;
@@ -923,7 +929,7 @@ body {
   left: .04em;
 }
 
-/* line 765, src/sass/components/_customizations.scss */
+/* line 769, src/sass/components/_customizations.scss */
 .reload-double:before {
   border-color: transparent #cab654 transparent transparent;
   border-width: .3125em .5em .3125em 0;
