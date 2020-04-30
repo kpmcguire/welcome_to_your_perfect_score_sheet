@@ -35,7 +35,7 @@
 	"dependencies": {
 		"gulp-pug": "^4.0.1",
 		"gulp-uglifycss": "^1.1.0",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"pug": "^2.0.4"
 	}
 }
